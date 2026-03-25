@@ -2,23 +2,20 @@
 
 import sys
 from pathlib import Path
-from datetime import datetime, timezone
 from typing import Any, Dict, List
-
-import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from dynabots_core.protocols.agent import Agent, LegacyAgent
-from dynabots_core.protocols.llm import LLMProvider, LLMMessage, LLMResponse, ToolDefinition
-from dynabots_core.protocols.judge import Judge, Verdict, Submission, ScoringJudge
-from dynabots_core.protocols.tool import Tool, tool_to_openai_format, tool_to_anthropic_format
+from dynabots_core.protocols.judge import Judge, ScoringJudge, Submission, Verdict
+from dynabots_core.protocols.llm import LLMMessage, LLMProvider, LLMResponse, ToolDefinition
 from dynabots_core.protocols.storage import (
-    ExecutionStore,
     AuditStore,
     CacheStore,
+    ExecutionStore,
     ReputationStore,
 )
+from dynabots_core.protocols.tool import Tool, tool_to_anthropic_format, tool_to_openai_format
 from dynabots_core.value_objects.task_result import TaskResult
 
 
@@ -37,8 +34,16 @@ class TestAgentProtocol:
             def capabilities(self) -> List[str]:
                 return ["task_execution"]
 
-            async def process_task(self, task_description: str, context: Dict[str, Any]) -> TaskResult:
-                return TaskResult.success(task_id=context["task_id"], data={"completed": True})
+            async def process_task(
+                self,
+                task_description: str,
+                context: Dict[str, Any],
+            ) -> TaskResult:
+                result_data = {"completed": True}
+                return TaskResult.success(
+                    task_id=context["task_id"],
+                    data=result_data,
+                )
 
             async def health_check(self) -> bool:
                 return True
@@ -62,8 +67,15 @@ class TestAgentProtocol:
             def domains(self) -> List[str]:
                 return ["data", "analytics"]
 
-            async def process_task(self, task_description: str, context: Dict[str, Any]) -> TaskResult:
-                return TaskResult.success(task_id=context["task_id"], data={})
+            async def process_task(
+                self,
+                task_description: str,
+                context: Dict[str, Any],
+            ) -> TaskResult:
+                return TaskResult.success(
+                    task_id=context["task_id"],
+                    data={},
+                )
 
             async def health_check(self) -> bool:
                 return True
@@ -537,12 +549,34 @@ class TestStorageProtocols:
                 self.logs.append({"type": "workflow", "workflow_id": workflow_id, "data": data})
                 return True
 
-            async def log_task(self, workflow_id: str, task_id: str, data: Dict[str, Any]) -> bool:
-                self.logs.append({"type": "task", "workflow_id": workflow_id, "task_id": task_id, "data": data})
+            async def log_task(
+                self,
+                workflow_id: str,
+                task_id: str,
+                data: Dict[str, Any],
+            ) -> bool:
+                log_entry = {
+                    "type": "task",
+                    "workflow_id": workflow_id,
+                    "task_id": task_id,
+                    "data": data,
+                }
+                self.logs.append(log_entry)
                 return True
 
-            async def log_error(self, workflow_id: str, error_type: str, message: str) -> bool:
-                self.logs.append({"type": "error", "workflow_id": workflow_id, "error_type": error_type, "message": message})
+            async def log_error(
+                self,
+                workflow_id: str,
+                error_type: str,
+                message: str,
+            ) -> bool:
+                log_entry = {
+                    "type": "error",
+                    "workflow_id": workflow_id,
+                    "error_type": error_type,
+                    "message": message,
+                }
+                self.logs.append(log_entry)
                 return True
 
         store = InMemoryAuditStore()

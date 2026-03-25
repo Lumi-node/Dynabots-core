@@ -7,10 +7,9 @@ exception handling, and result construction.
 
 import asyncio
 
-import pytest
 
 from dynabots_core import TaskResult
-from dynabots_orc.arena.trial import Trial, TrialResult
+from dynabots_orc.arena.trial import Trial
 
 from conftest import MockAgent, MockJudge
 
@@ -235,7 +234,7 @@ class TestTrialContextPassing:
             context={"custom_key": "custom_value"},
         )
 
-        result = await trial.execute()
+        _ = await trial.execute()
 
         warlord_context = mock_agent_fast.last_context
         assert "trial_id" in warlord_context
@@ -256,7 +255,7 @@ class TestTrialContextPassing:
             context={"custom_key": "custom_value"},
         )
 
-        result = await trial.execute()
+        _ = await trial.execute()
 
         challenger_context = mock_agent_slow.last_context
         assert "trial_id" in challenger_context
@@ -353,7 +352,6 @@ class TestTrialWithDifferentJudges:
 
     async def test_trial_with_tied_verdict(self, mock_agent_fast, mock_agent_slow):
         """Test trial handling when judge returns tie."""
-        from conftest import MockJudge
         from dynabots_core import Verdict
 
         tie_verdict = Verdict(

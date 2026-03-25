@@ -1,14 +1,14 @@
 """Tests for TaskResult value object."""
 
 import sys
-from pathlib import Path
 from datetime import datetime, timezone
+from pathlib import Path
 
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from dynabots_core.value_objects.task_result import TaskResult, TaskOutcome
+from dynabots_core.value_objects.task_result import TaskOutcome, TaskResult
 
 
 class TestTaskOutcomeEnum:

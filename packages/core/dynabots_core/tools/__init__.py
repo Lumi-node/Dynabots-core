@@ -7,6 +7,6 @@ This module provides utilities for working with tools:
 - Tool execution helpers
 """
 
-from dynabots_core.protocols.tool import Tool, tool_to_openai_format, tool_to_anthropic_format
+from dynabots_core.protocols.tool import Tool, tool_to_anthropic_format, tool_to_openai_format
 
 __all__ = ["Tool", "tool_to_openai_format", "tool_to_anthropic_format"]

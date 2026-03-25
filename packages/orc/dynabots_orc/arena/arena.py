@@ -9,14 +9,13 @@ The Arena is the core orchestration component of Orc!!. It:
 - Maintains reputation scores
 """
 
-import asyncio
 import random
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any, Callable, Dict, List, Optional, Set
 import uuid
 
-from dynabots_core import Agent, TaskResult, Judge, Verdict
+from dynabots_core import Agent, Judge, Verdict
 from dynabots_core.protocols.storage import ReputationStore
 
 from dynabots_orc.arena.trial import Trial, TrialResult

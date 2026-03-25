@@ -35,7 +35,6 @@ from typing import Any, Dict, List, Optional
 
 from dynabots_core.protocols.llm import (
     LLMMessage,
-    LLMProvider,
     LLMResponse,
     ToolDefinition,
 )
@@ -157,18 +156,35 @@ class OllamaProvider:
         response = await self._client.chat(**kwargs)
 
         # Handle both dict and Pydantic response objects
-        msg = response.message if hasattr(response, "message") else response.get("message", {})
-        content = msg.content if hasattr(msg, "content") else msg.get("content", "")
+        msg = (
+            response.message if hasattr(response, "message")
+            else response.get("message", {})
+        )
+        content = (
+            msg.content if hasattr(msg, "content")
+            else msg.get("content", "")
+        )
 
         # Extract tool calls if present
         tool_calls = None
-        msg_tools = getattr(msg, "tool_calls", None) or (msg.get("tool_calls") if isinstance(msg, dict) else None)
+        msg_tools = (
+            getattr(msg, "tool_calls", None) or
+            (msg.get("tool_calls") if isinstance(msg, dict) else None)
+        )
         if msg_tools:
             tool_calls = msg_tools
 
         # Extract usage
-        prompt_tokens = getattr(response, "prompt_eval_count", 0) or (response.get("prompt_eval_count", 0) if isinstance(response, dict) else 0)
-        completion_tokens = getattr(response, "eval_count", 0) or (response.get("eval_count", 0) if isinstance(response, dict) else 0)
+        prompt_tokens = (
+            getattr(response, "prompt_eval_count", 0) or
+            (response.get("prompt_eval_count", 0)
+             if isinstance(response, dict) else 0)
+        )
+        completion_tokens = (
+            getattr(response, "eval_count", 0) or
+            (response.get("eval_count", 0)
+             if isinstance(response, dict) else 0)
+        )
 
         return LLMResponse(
             content=content,

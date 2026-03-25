@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional
 
 import pytest
 
-from dynabots_core import Agent, Judge, TaskResult, Verdict, LLMProvider, LLMMessage, LLMResponse
+from dynabots_core import TaskResult, Verdict, LLMMessage, LLMResponse
 from dynabots_core.protocols.judge import Submission
 from dynabots_orc.strategies import AlwaysChallenge
 

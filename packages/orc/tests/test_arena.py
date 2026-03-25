@@ -7,19 +7,16 @@ and succession/defense mechanics.
 
 import random
 from datetime import datetime, timedelta, timezone
-from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-# Ensure we're using async test function signature
-pytestmark = pytest.mark.asyncio
-
 from dynabots_core import TaskResult, Verdict
 from dynabots_orc.arena.arena import Arena, ArenaConfig, AgentState
-from dynabots_orc.arena.trial import TrialResult
-from dynabots_orc.strategies import AlwaysChallenge, ReputationBased
 
 from conftest import MockAgent, MockJudge
+
+# Ensure we're using async test function signature
+pytestmark = pytest.mark.asyncio
 
 
 class TestArenaInitialization:

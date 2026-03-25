@@ -6,7 +6,6 @@ Tests cover MetricsJudge, ConsensusJudge, and LLMJudge.
 
 import json
 
-import pytest
 
 from dynabots_core import TaskResult, Verdict
 from dynabots_core.protocols.judge import Submission
@@ -14,7 +13,7 @@ from dynabots_orc.judges.metrics_judge import MetricsJudge
 from dynabots_orc.judges.consensus_judge import ConsensusJudge
 from dynabots_orc.judges.llm_judge import LLMJudge
 
-from conftest import MockAgent, MockJudge, MockLLMProvider
+from conftest import MockJudge, MockLLMProvider
 
 
 class TestMetricsJudge:
@@ -114,14 +113,6 @@ class TestMetricsJudge:
         judge_latency_focused = MetricsJudge(
             weights={"accuracy": 0.1, "latency": 0.8, "cost": 0.1}
         )
-
-        result1 = TaskResult.success(task_id="task1", data="ok")
-        result2 = TaskResult.success(task_id="task2", data="ok")
-
-        submissions = [
-            Submission(agent="Agent1", result=result1, latency_ms=100, cost=0.05),
-            Submission(agent="Agent2", result=result2, latency_ms=500, cost=0.05),
-        ]
 
         # Both judges should exist and be configurable
         assert judge_accuracy_focused.weights["accuracy"] == 0.9

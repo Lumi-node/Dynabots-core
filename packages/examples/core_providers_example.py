@@ -8,6 +8,7 @@ Run with:
 """
 
 import asyncio
+
 from dynabots_core import LLMMessage
 
 
@@ -47,9 +48,11 @@ async def demo_openai():
     print("=" * 50)
 
     try:
-        from openai import AsyncOpenAI
-        from dynabots_core.providers import OpenAIProvider
         import os
+
+        from openai import AsyncOpenAI
+
+        from dynabots_core.providers import OpenAIProvider
 
         # Check for API key
         if not os.environ.get("OPENAI_API_KEY"):
@@ -81,9 +84,11 @@ async def demo_anthropic():
     print("=" * 50)
 
     try:
-        from anthropic import AsyncAnthropic
-        from dynabots_core.providers import AnthropicProvider
         import os
+
+        from anthropic import AsyncAnthropic
+
+        from dynabots_core.providers import AnthropicProvider
 
         # Check for API key
         if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -115,8 +120,9 @@ async def demo_json_mode():
     print("=" * 50)
 
     try:
-        from dynabots_core.providers import OllamaProvider
         import json
+
+        from dynabots_core.providers import OllamaProvider
 
         llm = OllamaProvider(model="qwen2.5:7b")
 

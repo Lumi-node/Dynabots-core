@@ -6,9 +6,7 @@ and SpecialistStrategy.
 """
 
 from datetime import datetime, timedelta, timezone
-import time
 
-import pytest
 
 from dynabots_orc.strategies import (
     AlwaysChallenge,
@@ -180,7 +178,6 @@ class TestCooldownStrategy:
 
     def test_cooldown_expires(self):
         """Test that challenge is allowed after cooldown expires."""
-        from datetime import datetime, timezone, timedelta
 
         strategy = CooldownStrategy(base_cooldown=1)
 
@@ -210,7 +207,6 @@ class TestCooldownStrategy:
 
     def test_cooldown_multiplier_on_successive_losses(self):
         """Test that cooldown increases with successive losses."""
-        from datetime import datetime, timezone, timedelta
 
         strategy = CooldownStrategy(
             base_cooldown=1,

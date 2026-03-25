@@ -3,16 +3,15 @@
 import sys
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
-from typing import Any, Dict, List
 
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from dynabots_core.protocols.llm import LLMMessage, LLMResponse, ToolDefinition
-from dynabots_core.providers.openai import OpenAIProvider
 from dynabots_core.providers.anthropic import AnthropicProvider
 from dynabots_core.providers.ollama import OllamaProvider
+from dynabots_core.providers.openai import OpenAIProvider
 
 
 class TestOpenAIProvider:
@@ -409,7 +408,7 @@ class TestOllamaProvider:
 
             provider = OllamaProvider(model="llama3.1:70b")
 
-            response = await provider.complete(
+            _ = await provider.complete(
                 [LLMMessage(role="user", content="Output JSON")],
                 json_mode=True,
             )
@@ -494,7 +493,7 @@ class TestOllamaProvider:
             mock_client = AsyncMock()
             mock_client_class.return_value = mock_client
 
-            provider = OllamaProvider(
+            _ = OllamaProvider(
                 model="qwen2.5:72b",
                 host="http://gpu-server:11434",
             )

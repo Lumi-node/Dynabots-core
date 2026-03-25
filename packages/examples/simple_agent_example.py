@@ -10,7 +10,7 @@ Run with:
 import asyncio
 from typing import Any, Dict, List
 
-from dynabots_core import Agent, TaskResult, LLMMessage
+from dynabots_core import LLMMessage, TaskResult
 from dynabots_core.providers import OllamaProvider
 
 

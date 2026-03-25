@@ -25,8 +25,8 @@ Example:
     llm = AnthropicProvider(AsyncAnthropic(), model="claude-3-5-sonnet-20241022")
 """
 
+from dynabots_core.providers.anthropic import AnthropicProvider
 from dynabots_core.providers.ollama import OllamaProvider
 from dynabots_core.providers.openai import OpenAIProvider
-from dynabots_core.providers.anthropic import AnthropicProvider
 
 __all__ = ["OllamaProvider", "OpenAIProvider", "AnthropicProvider"]

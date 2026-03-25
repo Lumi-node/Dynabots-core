@@ -9,12 +9,12 @@ Run with:
 """
 
 import asyncio
-from typing import Dict, Any, List
+from typing import Any, Dict, List
+
+from dynabots_orc import Arena, LLMJudge, ReputationBased
 
 from dynabots_core import TaskResult
 from dynabots_core.providers import OllamaProvider
-from dynabots_orc import Arena, LLMJudge, ReputationBased
-
 
 # Define competing agents
 
@@ -167,11 +167,17 @@ async def main():
         judge = MockJudge()
 
     # Create arena with agents
+    def on_challenge_handler(warlord, challenger, domain):
+        print(f"\n⚔️  CHALLENGE: {challenger} challenges {warlord} for '{domain}' domain!")
+
+    def on_succession_handler(old_warlord, new_warlord, domain):
+        print(f"👑 SUCCESSION: {new_warlord} defeats {old_warlord}, now rules '{domain}'!")
+
     arena = Arena(
         agents=[DataAgent(), AnalyticsAgent(), ReportAgent()],
         judge=judge,
-        on_challenge=lambda w, c, d: print(f"\n⚔️  CHALLENGE: {c} challenges {w} for '{d}' domain!"),
-        on_succession=lambda old, new, d: print(f"👑 SUCCESSION: {new} defeats {old}, now rules '{d}'!"),
+        on_challenge=on_challenge_handler,
+        on_succession=on_succession_handler,
     )
 
     print("\nInitial Warlords:")

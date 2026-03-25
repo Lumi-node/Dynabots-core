@@ -27,8 +27,7 @@ Example:
             ...
 """
 
-from typing import Any, Dict, List, Optional, Protocol, runtime_checkable
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Protocol, runtime_checkable
 
 if TYPE_CHECKING:
     from dynabots_core.value_objects.task_result import TaskResult

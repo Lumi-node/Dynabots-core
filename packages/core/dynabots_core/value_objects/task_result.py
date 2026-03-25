@@ -27,9 +27,9 @@ Example:
 """
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, Optional
-from enum import Enum
 from datetime import datetime, timezone
+from enum import Enum
+from typing import Any, Dict, Optional
 
 
 class TaskOutcome(Enum):
