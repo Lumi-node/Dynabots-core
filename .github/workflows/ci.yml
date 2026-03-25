@@ -23,7 +23,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dynabots-core
-        run: pip install -e "packages/core[dev]"
+        run: pip install -e "packages/core[all,dev]"
 
       - name: Lint
         run: ruff check packages/core/dynabots_core/
