@@ -1,32 +1,40 @@
 site_name: DynaBots
-site_description: "Multi-agent orchestration framework for Python"
-site_author: "DynaBots Team"
-site_url: "https://github.com/Lumi-node/Dynabots"
-repo_url: "https://github.com/Lumi-node/Dynabots"
-repo_name: "Lumi-node/Dynabots"
+site_url: https://lumi-node.github.io/Dynabots-core/
+site_description: "Multi-agent orchestration for Python. Protocol-first foundation for building AI agent systems."
+repo_url: https://github.com/Lumi-node/Dynabots-core
+repo_name: Lumi-node/Dynabots-core
 
 theme:
   name: material
-  features:
-    - navigation.instant
-    - navigation.tabs
-    - navigation.sections
-    - content.code.copy
-    - search.suggest
-    - search.highlight
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - scheme: slate
       primary: indigo
       accent: blue
       toggle:
-        icon: material/weather-night
-        name: Light mode
+        icon: material/brightness-4
+        name: Switch to light mode
     - scheme: default
       primary: indigo
       accent: blue
       toggle:
-        icon: material/weather-sunny
-        name: Dark mode
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
   font:
     text: Inter
     code: JetBrains Mono
@@ -36,17 +44,20 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
+          paths: [packages/core]
           options:
             docstring_style: google
             show_source: true
             show_root_heading: true
             show_bases: true
+            heading_level: 3
 
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.tabbed:
@@ -54,9 +65,23 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
   - tables
   - toc:
       permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Lumi-node/Dynabots-core
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/dynabots-core/
+
+copyright: Copyright &copy; 2025-2026 DynaBots Contributors — Apache 2.0 License
 
 nav:
   - Home: index.md

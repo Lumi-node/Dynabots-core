@@ -1,115 +1,127 @@
-# DynaBots
+---
+hide:
+  - navigation
+  - toc
+---
 
-**Multi-Agent Orchestration for Python**
+<style>
+  .md-typeset h1 { display: none; }
+</style>
+
+<div class="hero" markdown>
+
+# **DynaBots**
+
+### Multi-agent orchestration for Python.
 
 A protocol-first foundation for building, evaluating, and deploying AI agent systems.
+Zero dependencies. Any LLM. Multiple orchestration philosophies.
+
+[Get Started](getting-started/installation.md){ .md-button .md-button--primary }
+[View on GitHub](https://github.com/Lumi-node/Dynabots-core){ .md-button }
+
+</div>
 
 ---
 
-## Core Features
+<div class="grid cards" markdown>
 
-### Protocol-First Design
+-   :material-protocol:{ .lg .middle } **Protocol-First**
 
-No inheritance required. DynaBots uses Python's `Protocol` for structural subtyping. Implement the right methods and your class works—no base classes, no coupling, no framework lock-in.
+    ---
 
-### Any LLM
+    No base classes. No framework lock-in. Just implement the right methods
+    using Python's structural subtyping and your class works everywhere.
 
-Swap providers without changing your agent code. Unified interface for Ollama (local), OpenAI, Anthropic, or any LLM service.
+    [:octicons-arrow-right-24: Learn the protocols](getting-started/concepts.md)
 
-### Extensible Ecosystem
+-   :material-swap-horizontal:{ .lg .middle } **Any LLM**
 
-Base package (`dynabots-core`) provides protocols and primitives. Orchestration packages (`ORC`, future frameworks) layer on top. All independently installable, all share the same foundation.
+    ---
 
----
+    Unified interface for Ollama (local, free), OpenAI, and Anthropic.
+    Swap providers without changing your agent code.
 
-## Quick Install
+    [:octicons-arrow-right-24: Provider guide](providers/overview.md)
 
-```bash
-pip install dynabots-core
-```
+-   :material-sword-cross:{ .lg .middle } **ORC — Competitive Orchestration**
 
-Optional provider extras:
+    ---
 
-```bash
-# Use specific providers
-pip install dynabots-core[openai]
-pip install dynabots-core[anthropic]
-pip install dynabots-core[ollama]
+    Agents compete for domain leadership in the Arena.
+    The best performer earns the crown — until challenged.
 
-# Or install all providers
-pip install dynabots-core[all]
-```
+    [:octicons-arrow-right-24: Explore ORC](ecosystem/orc.md)
+
+-   :material-puzzle:{ .lg .middle } **Composable Ecosystem**
+
+    ---
+
+    `dynabots-core` provides the foundation. Orchestration packages layer on top.
+    Each independently installable. All share the same protocols.
+
+    [:octicons-arrow-right-24: See the roadmap](ecosystem/roadmap.md)
+
+</div>
 
 ---
 
 ## Quick Example
 
-### 1. Define an Agent
+=== "Define an Agent"
 
-Implement the `Agent` protocol. That's it—no base class required.
+    ```python
+    from dynabots_core import Agent, TaskResult
 
-```python
-from dynabots_core import Agent, TaskResult
+    class DataAgent:
+        @property
+        def name(self) -> str:
+            return "DataAgent"
 
-class DataAgent:
-    @property
-    def name(self) -> str:
-        return "DataAgent"
+        @property
+        def capabilities(self) -> list[str]:
+            return ["fetch_data", "analyze"]
 
-    @property
-    def capabilities(self) -> list[str]:
-        return ["fetch_data", "analyze"]
+        @property
+        def domains(self) -> list[str]:
+            return ["data", "analytics"]
 
-    @property
-    def domains(self) -> list[str]:
-        return ["data", "analytics"]
+        async def process_task(self, task: str, context: dict) -> TaskResult:
+            result = await self.do_work(task)
+            return TaskResult.success(task_id=context["task_id"], data=result)
+    ```
 
-    async def process_task(self, task: str, context: dict) -> TaskResult:
-        # Use your agent's LLM to pick tools
-        result = await self.do_work(task)
-        return TaskResult.success(
-            task_id=context["task_id"],
-            data=result
-        )
+=== "Use Any LLM"
 
-    async def health_check(self) -> bool:
-        return True
-```
+    ```python
+    from dynabots_core.providers import OllamaProvider, OpenAIProvider, AnthropicProvider
 
-### 2. Use an LLM Provider
+    # Local (free)
+    llm = OllamaProvider(model="qwen2.5:7b")
 
-```python
-from dynabots_core.providers import OllamaProvider
+    # OpenAI
+    from openai import AsyncOpenAI
+    llm = OpenAIProvider(AsyncOpenAI(), model="gpt-4o")
 
-# Local model via Ollama
-llm = OllamaProvider(model="qwen2.5:7b")
+    # Anthropic
+    from anthropic import AsyncAnthropic
+    llm = AnthropicProvider(AsyncAnthropic(), model="claude-sonnet-4-20250514")
+    ```
 
-# Or OpenAI
-from openai import AsyncOpenAI
-from dynabots_core.providers import OpenAIProvider
-llm = OpenAIProvider(AsyncOpenAI(), model="gpt-4o")
+=== "Run an Arena (ORC)"
 
-# Or Anthropic
-from anthropic import AsyncAnthropic
-from dynabots_core.providers import AnthropicProvider
-llm = AnthropicProvider(AsyncAnthropic(), model="claude-3-5-sonnet-20241022")
-```
+    ```python
+    from dynabots_orc import Arena, MetricsJudge
 
-### 3. Run Your Agent
-
-```python
-import asyncio
-
-async def main():
-    agent = DataAgent()
-    result = await agent.process_task(
-        "Analyze Q4 sales data",
-        {"task_id": "task_001"}
+    arena = Arena(
+        agents=[DataAgent(), AnalyticsAgent()],
+        judge=MetricsJudge(),
+        on_succession=lambda old, new, d: print(f"{new} defeats {old}!"),
     )
-    print(result.data)
 
-asyncio.run(main())
-```
+    result = await arena.process("Analyze Q4 sales data")
+    print(f"Winner: {result.winner}")
+    ```
 
 ---
 
@@ -123,13 +135,13 @@ asyncio.run(main())
          ┌────────────┼────────────┐
          ▼            ▼            ▼
    ┌──────────┐ ┌──────────┐ ┌──────────┐
-   │   ORC    │ │ [Future] │ │ [Future] │
-   │  Arena   │ │   DAG    │ │  Swarm   │
+   │   ORC    │ │  [SAO]   │ │ [FORGE]  │
+   │  Arena   │ │  Tower   │ │  Anvil   │
    └────┬─────┘ └────┬─────┘ └────┬─────┘
         └─────────────┼────────────┘
                       ▼
            ┌─────────────────────┐
-           │  dynabots-core      │
+           │   dynabots-core     │
            │  Protocols & Types  │
            └──────────┬──────────┘
                       │
@@ -142,83 +154,36 @@ asyncio.run(main())
 
 ---
 
-## What's Included
+## Packages
 
-### dynabots-core
-
-Zero-dependency protocol foundation.
-
-- **Agent**: Process natural language tasks, health checks
-- **LLMProvider**: Unified interface for any LLM service
-- **Judge**: Evaluate and compare agent submissions
-- **Tool**: JSON-schema tool definitions for function calling
-- **TaskResult**: Rich outcome semantics (success/failure/skip/partial)
-- **Providers**: OpenAI, Anthropic, Ollama adapters
-
-### dynabots-orc
-
-Competitive orchestration—agents earn leadership through trials.
-
-```bash
-pip install dynabots-orc
-```
-
-Agents compete for domain leadership. The best performer becomes the Warlord until challenged.
-
-```python
-from dynabots_orc import Arena, LLMJudge
-
-arena = Arena(
-    agents=[DataAgent(), AnalyticsAgent()],
-    judge=LLMJudge(llm),
-    on_succession=lambda old, new, domain: print(f"{new} defeats {old}!")
-)
-
-result = await arena.process("Analyze Q4 data")
-print(f"Winner: {result.winner}")
-```
+| Package | Install | Description |
+|---------|---------|-------------|
+| **dynabots-core** | `pip install dynabots-core` | Protocols, LLM providers, TaskResult |
+| **orc-arena** | `pip install orc-arena` | Competitive orchestration — agents fight for leadership |
+| *SAO* | *coming soon* | Survival RL — agents level up through challenge floors |
+| *FORGE* | *coming soon* | Adversarial refinement — critic-driven improvement |
+| *HIVE* | *coming soon* | Swarm intelligence — leaderless emergent convergence |
 
 ---
 
-## Documentation
+<div class="grid cards" markdown>
 
-- **[Getting Started](getting-started/installation.md)**: Installation and setup
-- **[Quick Start](getting-started/quick-start.md)**: Your first agent in 5 minutes
-- **[Core Concepts](getting-started/concepts.md)**: Protocols, TaskResult, and patterns
-- **[Protocols](protocols/agent.md)**: Complete protocol reference
-- **[Providers](providers/overview.md)**: LLM provider guide
-- **[Value Objects](value-objects/task-result.md)**: TaskResult semantics
-- **[Ecosystem](ecosystem/orc.md)**: ORC and future packages
+-   :material-book-open-variant:{ .lg .middle } **Documentation**
 
----
+    ---
 
-## Key Principles
+    [:octicons-arrow-right-24: Getting Started](getting-started/installation.md)
+    [:octicons-arrow-right-24: Protocol Reference](protocols/agent.md)
+    [:octicons-arrow-right-24: Provider Guide](providers/overview.md)
+    [:octicons-arrow-right-24: TaskResult Semantics](value-objects/task-result.md)
 
-**Protocol-First**: Structural subtyping, no inheritance, maximum flexibility.
+-   :material-github:{ .lg .middle } **Community**
 
-**Zero Dependencies**: dynabots-core has no external dependencies. Add only what you need.
+    ---
 
-**Unified Interfaces**: One way to talk to any LLM, any judge, any storage backend.
+    [:octicons-arrow-right-24: GitHub](https://github.com/Lumi-node/Dynabots-core)
+    [:octicons-arrow-right-24: PyPI — dynabots-core](https://pypi.org/project/dynabots-core/)
+    [:octicons-arrow-right-24: PyPI — orc-arena](https://pypi.org/project/orc-arena/)
+    [:octicons-arrow-right-24: ORC Docs](https://lumi-node.github.io/ORC/)
 
-**Composable**: Protocols layer on top of each other. Mix and match.
-
-**Extensible**: Implement a protocol, use it everywhere.
-
----
-
-## Next Steps
-
-1. [Install dynabots-core](getting-started/installation.md)
-2. [Build your first agent](getting-started/quick-start.md)
-3. [Learn the protocols](getting-started/concepts.md)
-4. [Explore ORC orchestration](ecosystem/orc.md)
-
----
-
-## License
-
-Apache 2.0 — See [LICENSE](https://github.com/Lumi-node/Dynabots/blob/main/LICENSE) for details.
-
-## Contributing
-
-Contributions welcome. See [CONTRIBUTING.md](https://github.com/Lumi-node/Dynabots/blob/main/CONTRIBUTING.md) for guidelines.
+</div>
