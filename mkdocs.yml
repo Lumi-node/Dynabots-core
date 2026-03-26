@@ -1,0 +1,82 @@
+site_name: DynaBots
+site_description: "Multi-agent orchestration framework for Python"
+site_author: "DynaBots Team"
+site_url: "https://github.com/Lumi-node/Dynabots"
+repo_url: "https://github.com/Lumi-node/Dynabots"
+repo_name: "Lumi-node/Dynabots"
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_bases: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quick-start.md
+      - Core Concepts: getting-started/concepts.md
+  - Protocols:
+      - Agent: protocols/agent.md
+      - LLM Provider: protocols/llm.md
+      - Judge: protocols/judge.md
+      - Tool: protocols/tool.md
+      - Storage: protocols/storage.md
+  - Providers:
+      - Overview: providers/overview.md
+      - Ollama: providers/ollama.md
+      - OpenAI: providers/openai.md
+      - Anthropic: providers/anthropic.md
+  - Value Objects:
+      - TaskResult: value-objects/task-result.md
+  - Ecosystem:
+      - ORC: ecosystem/orc.md
+      - Roadmap: ecosystem/roadmap.md
