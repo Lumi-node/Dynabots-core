@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1849,7 +1849,7 @@
 <span class="normal"><a href="#__codelineno-0-124">124</a></span>
 <span class="normal"><a href="#__codelineno-0-125">125</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="nd">@runtime_checkable</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="k">class</span><span class="w"> </span><span class="nc">Agent</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">    Protocol for agents that participate in DynaBots orchestration.</span>
 <a id="__codelineno-0-46" name="__codelineno-0-46"></a>
 <a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">    Required properties:</span>
@@ -1857,7 +1857,7 @@
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">    - capabilities: List of capability names this agent supports</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">    Optional properties:</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">    - domains: Domain keywords for intelligent routing (e.g., [&quot;data&quot;, &quot;etl&quot;])</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">    - domains: Domain keywords for intelligent routing (e.g., ["data", "etl"])</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">    - description: Human-readable description</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">    Required methods:</span>
@@ -1866,24 +1866,24 @@
 <a id="__codelineno-0-58" name="__codelineno-0-58"></a>
 <a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">    Optional methods:</span>
 <a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">    - execute_capability: Direct capability execution (legacy mode)</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">    """</span>
 <a id="__codelineno-0-62" name="__codelineno-0-62"></a>
 <a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="nd">@property</span>
 <a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Unique agent identifier.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">        </span><span class="sd">"""Unique agent identifier."""</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="o">...</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="nd">@property</span>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">capabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;List of capability names this agent supports.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">        </span><span class="sd">"""List of capability names this agent supports."""</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="o">...</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_task</span><span class="p">(</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="n">task_description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;TaskResult&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"TaskResult"</span><span class="p">:</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">        </span><span class="sd">"""</span>
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">        Smart Mode: Execute a task described in natural language.</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">        The agent uses its own LLM and tool schemas to decide how</span>
@@ -1902,21 +1902,21 @@
 <a id="__codelineno-0-94" name="__codelineno-0-94"></a>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">        Example:</span>
 <a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">            async def process_task(self, task_description, context):</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">                # Use your agent&#39;s LLM to understand the task</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">                # Use your agent's LLM to understand the task</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">                plan = await self.llm.plan(task_description, self.tools)</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a>
 <a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">                # Execute the plan</span>
 <a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">                result = await self.execute_plan(plan)</span>
 <a id="__codelineno-0-102" name="__codelineno-0-102"></a>
 <a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">                return TaskResult.success(</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">                    task_id=context[&quot;task_id&quot;],</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">                    task_id=context["task_id"],</span>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="sd">                    data=result</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="sd">                )</span>
-<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">        """</span>
 <a id="__codelineno-0-108" name="__codelineno-0-108"></a>        <span class="o">...</span>
 <a id="__codelineno-0-109" name="__codelineno-0-109"></a>
 <a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">health_check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="w">        </span><span class="sd">"""</span>
 <a id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="sd">        Check if this agent is healthy and ready to process tasks.</span>
 <a id="__codelineno-0-113" name="__codelineno-0-113"></a>
 <a id="__codelineno-0-114" name="__codelineno-0-114"></a><span class="sd">        Returns:</span>
@@ -1929,7 +1929,7 @@
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="sd">                    return True</span>
 <a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="sd">                except Exception:</span>
 <a id="__codelineno-0-123" name="__codelineno-0-123"></a><span class="sd">                    return False</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="sd">        """</span>
 <a id="__codelineno-0-125" name="__codelineno-0-125"></a>        <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2060,7 +2060,7 @@
 <span class="normal"><a href="#__codelineno-0-123">123</a></span>
 <span class="normal"><a href="#__codelineno-0-124">124</a></span>
 <span class="normal"><a href="#__codelineno-0-125">125</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-110" name="__codelineno-0-110"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">health_check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="sd">    Check if this agent is healthy and ready to process tasks.</span>
 <a id="__codelineno-0-113" name="__codelineno-0-113"></a>
 <a id="__codelineno-0-114" name="__codelineno-0-114"></a><span class="sd">    Returns:</span>
@@ -2073,7 +2073,7 @@
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="sd">                return True</span>
 <a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="sd">            except Exception:</span>
 <a id="__codelineno-0-123" name="__codelineno-0-123"></a><span class="sd">                return False</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="sd">    """</span>
 <a id="__codelineno-0-125" name="__codelineno-0-125"></a>    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2189,7 +2189,7 @@ to accomplish the task. This is the preferred execution mode.</p>
 result = await self.execute_plan(plan)
 
 return TaskResult.success(
-    task_id=context[&quot;task_id&quot;],
+    task_id=context["task_id"],
     data=result
 )
 </code></pre></div>
@@ -2236,8 +2236,8 @@ return TaskResult.success(
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="n">task_description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;TaskResult&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"TaskResult"</span><span class="p">:</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">    Smart Mode: Execute a task described in natural language.</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">    The agent uses its own LLM and tool schemas to decide how</span>
@@ -2256,17 +2256,17 @@ return TaskResult.success(
 <a id="__codelineno-0-94" name="__codelineno-0-94"></a>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">    Example:</span>
 <a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">        async def process_task(self, task_description, context):</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">            # Use your agent&#39;s LLM to understand the task</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">            # Use your agent's LLM to understand the task</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">            plan = await self.llm.plan(task_description, self.tools)</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a>
 <a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">            # Execute the plan</span>
 <a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">            result = await self.execute_plan(plan)</span>
 <a id="__codelineno-0-102" name="__codelineno-0-102"></a>
 <a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">            return TaskResult.success(</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">                task_id=context[&quot;task_id&quot;],</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">                task_id=context["task_id"],</span>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="sd">                data=result</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="sd">            )</span>
-<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">    """</span>
 <a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2286,30 +2286,30 @@ return TaskResult.success(
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">SimpleAgent</span><span class="p">:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A minimal agent implementation.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="sd">"""A minimal agent implementation."""</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="nd">@property</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">return</span> <span class="s2">&quot;SimpleAgent&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="k">return</span> <span class="s2">"SimpleAgent"</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nd">@property</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">capabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;greet&quot;</span><span class="p">,</span> <span class="s2">&quot;answer&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="k">return</span> <span class="p">[</span><span class="s2">"greet"</span><span class="p">,</span> <span class="s2">"answer"</span><span class="p">]</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_task</span><span class="p">(</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="n">task_description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TaskResult</span><span class="p">:</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute a task.&quot;&quot;&quot;</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">if</span> <span class="s2">&quot;hello&quot;</span> <span class="ow">in</span> <span class="n">task_description</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="sd">"""Execute a task."""</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">if</span> <span class="s2">"hello"</span> <span class="ow">in</span> <span class="n">task_description</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>            <span class="k">return</span> <span class="n">TaskResult</span><span class="o">.</span><span class="n">success</span><span class="p">(</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                <span class="n">task_id</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;task_id&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello!&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                <span class="n">task_id</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"task_id"</span><span class="p">,</span> <span class="s2">"unknown"</span><span class="p">),</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="s2">"Hello!"</span><span class="p">}</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            <span class="p">)</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="k">return</span> <span class="n">TaskResult</span><span class="o">.</span><span class="n">failure</span><span class="p">(</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="n">task_id</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;task_id&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="n">error</span><span class="o">=</span><span class="s2">&quot;Unknown task&quot;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="n">task_id</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"task_id"</span><span class="p">,</span> <span class="s2">"unknown"</span><span class="p">),</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="n">error</span><span class="o">=</span><span class="s2">"Unknown task"</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="p">)</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">health_check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -2324,10 +2324,10 @@ return TaskResult.success(
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core.providers</span><span class="w"> </span><span class="kn">import</span> <span class="n">OllamaProvider</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMAgent</span><span class="p">:</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Agent that uses LLM for smart task understanding.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="sd">"""Agent that uses LLM for smart task understanding."""</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">llm</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">llm</span> <span class="o">=</span> <span class="n">llm</span> <span class="ow">or</span> <span class="n">OllamaProvider</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen2.5:7b&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">llm</span> <span class="o">=</span> <span class="n">llm</span> <span class="ow">or</span> <span class="n">OllamaProvider</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"qwen2.5:7b"</span><span class="p">)</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_search_knowledge_base</span><span class="p">,</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_compute_calculation</span><span class="p">,</span>
@@ -2336,47 +2336,47 @@ return TaskResult.success(
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="nd">@property</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="k">return</span> <span class="s2">&quot;LLMAgent&quot;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="k">return</span> <span class="s2">"LLMAgent"</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="nd">@property</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">capabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;search&quot;</span><span class="p">,</span> <span class="s2">&quot;compute&quot;</span><span class="p">,</span> <span class="s2">&quot;summarize&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="k">return</span> <span class="p">[</span><span class="s2">"search"</span><span class="p">,</span> <span class="s2">"compute"</span><span class="p">,</span> <span class="s2">"summarize"</span><span class="p">]</span>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="nd">@property</span>
 <a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">domains</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;information&quot;</span><span class="p">,</span> <span class="s2">&quot;analytics&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="k">return</span> <span class="p">[</span><span class="s2">"information"</span><span class="p">,</span> <span class="s2">"analytics"</span><span class="p">]</span>
 <a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
 <a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_task</span><span class="p">(</span>
 <a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>        <span class="n">task_description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>        <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
 <a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TaskResult</span><span class="p">:</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Use LLM to understand and execute task.&quot;&quot;&quot;</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        <span class="n">task_id</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;task_id&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">        </span><span class="sd">"""Use LLM to understand and execute task."""</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        <span class="n">task_id</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"task_id"</span><span class="p">,</span> <span class="s2">"unknown"</span><span class="p">)</span>
 <a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
 <a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        <span class="c1"># Build prompt with available tools</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="n">tools_info</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>            <span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">tool</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tool</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="n">tools_info</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>            <span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">tool</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tool</span><span class="o">.</span><span class="vm">__doc__</span><span class="si">}</span><span class="s2">"</span>
 <a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>            <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tools</span>
 <a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        <span class="p">])</span>
 <a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;You are a helpful assistant.</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""You are a helpful assistant.</span>
 <a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
 <a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="s2">Available tools:</span>
 <a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="si">{</span><span class="n">tools_info</span><span class="si">}</span>
 <a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
 <a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="s2">User request: </span><span class="si">{</span><span class="n">task_description</span><span class="si">}</span>
 <a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="s2">Determine which tool(s) to use and execute them.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="s2">Determine which tool(s) to use and execute them."""</span>
 <a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>        <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">([</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>                <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>                <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
 <a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>            <span class="p">])</span>
 <a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>
 <a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>            <span class="k">return</span> <span class="n">TaskResult</span><span class="o">.</span><span class="n">success</span><span class="p">(</span>
 <a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>                <span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">,</span>
-<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>                <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>                <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">"response"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
 <a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>            <span class="p">)</span>
 <a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>            <span class="k">return</span> <span class="n">TaskResult</span><span class="o">.</span><span class="n">failure</span><span class="p">(</span>
@@ -2385,31 +2385,31 @@ return TaskResult.success(
 <a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>            <span class="p">)</span>
 <a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>
 <a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">health_check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if LLM is accessible.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="w">        </span><span class="sd">"""Check if LLM is accessible."""</span>
 <a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>        <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">([</span>
-<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>                <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;ping&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>                <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"ping"</span><span class="p">)</span>
 <a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>            <span class="p">])</span>
 <a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>            <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 <a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
 <a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>            <span class="k">return</span> <span class="kc">False</span>
 <a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>
 <a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_search_knowledge_base</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Search the knowledge base.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="w">        </span><span class="sd">"""Search the knowledge base."""</span>
 <a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>        <span class="c1"># Simulate search</span>
-<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Results for &#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Results for '</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">'"</span>
 <a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>
 <a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_compute_calculation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute a mathematical expression.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="w">        </span><span class="sd">"""Compute a mathematical expression."""</span>
 <a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>        <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 <a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span>
 <a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>
 <a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_generate_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a summary of text.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a><span class="w">        </span><span class="sd">"""Generate a summary of text."""</span>
 <a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>        <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
-<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>        <span class="k">return</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"..."</span>
 </code></pre></div>
 <hr />
 <h2 id="domains-and-capabilities">Domains and Capabilities<a class="headerlink" href="#domains-and-capabilities" title="Permanent link">&para;</a></h2>
@@ -2419,10 +2419,10 @@ return TaskResult.success(
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@property</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">capabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">return</span> <span class="p">[</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="s2">&quot;fetch_data&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="s2">&quot;query_database&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="s2">&quot;transform_data&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="s2">&quot;export_csv&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="s2">"fetch_data"</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="s2">"query_database"</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="s2">"transform_data"</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="s2">"export_csv"</span><span class="p">,</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="p">]</span>
 </code></pre></div>
 <p>Used by orchestration frameworks to route tasks to capable agents.</p>
@@ -2431,30 +2431,30 @@ return TaskResult.success(
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@property</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">domains</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">return</span> <span class="p">[</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="s2">&quot;data&quot;</span><span class="p">,</span>        <span class="c1"># General data domain</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="s2">&quot;analytics&quot;</span><span class="p">,</span>   <span class="c1"># Analytics focus</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="s2">&quot;etl&quot;</span><span class="p">,</span>         <span class="c1"># Extract-transform-load</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="s2">"data"</span><span class="p">,</span>        <span class="c1"># General data domain</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="s2">"analytics"</span><span class="p">,</span>   <span class="c1"># Analytics focus</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="s2">"etl"</span><span class="p">,</span>         <span class="c1"># Extract-transform-load</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">]</span>
 </code></pre></div>
 <p>Used for smart routing and competition (agents compete within domains).</p>
 <h3 id="overlapping-domains">Overlapping Domains<a class="headerlink" href="#overlapping-domains" title="Permanent link">&para;</a></h3>
 <p>Multiple agents can cover the same domain. Orchestration frameworks (like ORC) use judges to determine which agent wins.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># DataAgent</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;analytics&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"data"</span><span class="p">,</span> <span class="s2">"analytics"</span><span class="p">]</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># AnalyticsAgent (also handles analytics!)</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;analytics&quot;</span><span class="p">,</span> <span class="s2">&quot;reporting&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"analytics"</span><span class="p">,</span> <span class="s2">"reporting"</span><span class="p">]</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Both cover &quot;analytics&quot; → they compete</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Both cover "analytics" → they compete</span>
 </code></pre></div>
 <hr />
 <h2 id="task-context">Task Context<a class="headerlink" href="#task-context" title="Permanent link">&para;</a></h2>
 <p>The <code>context</code> dict passed to <code>process_task()</code> contains execution metadata:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TaskResult</span><span class="p">:</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">task_id</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="s2">&quot;task_id&quot;</span><span class="p">]</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">workflow_id</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;workflow_id&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">parent_results</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parent_results&quot;</span><span class="p">,</span> <span class="p">[])</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">user_context</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;user_context&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">task_id</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="s2">"task_id"</span><span class="p">]</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">workflow_id</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"workflow_id"</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">parent_results</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"parent_results"</span><span class="p">,</span> <span class="p">[])</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">user_context</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"user_context"</span><span class="p">)</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="c1"># Use context in your task execution</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="o">...</span>
@@ -2470,7 +2470,7 @@ return TaskResult.success(
 <h2 id="health-checks">Health Checks<a class="headerlink" href="#health-checks" title="Permanent link">&para;</a></h2>
 <p>The <code>health_check()</code> method enables liveness detection.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">health_check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Is this agent ready?&quot;&quot;&quot;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">"""Is this agent ready?"""</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        <span class="c1"># Check database connection</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">ping</span><span class="p">()</span>
@@ -2488,7 +2488,7 @@ return TaskResult.success(
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">use_agent</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Agent</span><span class="p">):</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> does not implement Agent protocol&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> does not implement Agent protocol"</span><span class="p">)</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="c1"># Safe to use as Agent</span>
 </code></pre></div>
 <hr />
@@ -2500,7 +2500,7 @@ return TaskResult.success(
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">plan</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">understand</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="c1"># Execute plan</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute_plan</span><span class="p">(</span><span class="n">plan</span><span class="p">)</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">return</span> <span class="n">TaskResult</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">context</span><span class="p">[</span><span class="s2">&quot;task_id&quot;</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">return</span> <span class="n">TaskResult</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">context</span><span class="p">[</span><span class="s2">"task_id"</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
 <p>Pros:
 - Flexible task understanding
@@ -2517,8 +2517,8 @@ return TaskResult.success(
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="n">capability</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="n">parameters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="n">context</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;TaskResult&quot;</span><span class="p">:</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute a specific capability directly.&quot;&quot;&quot;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"TaskResult"</span><span class="p">:</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="sd">"""Execute a specific capability directly."""</span>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="o">...</span>
 </code></pre></div>
 <p>Pros:
@@ -2673,7 +2673,7 @@ return TaskResult.success(
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

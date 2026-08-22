@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1870,12 +1870,12 @@ your agent code.</p>
 ) -&gt; LLMResponse:
     response = await self.client.chat(
         model=self.model,
-        messages=[{&quot;role&quot;: m.role, &quot;content&quot;: m.content} for m in messages],
-        options={&quot;temperature&quot;: temperature, &quot;num_predict&quot;: max_tokens},
-        format=&quot;json&quot; if json_mode else None,
+        messages=[{"role": m.role, "content": m.content} for m in messages],
+        options={"temperature": temperature, "num_predict": max_tokens},
+        format="json" if json_mode else None,
     )
     return LLMResponse(
-        content=response[&quot;message&quot;][&quot;content&quot;],
+        content=response["message"]["content"],
         model=self.model,
     )
 </code></pre></div>
@@ -1958,7 +1958,7 @@ your agent code.</p>
 <span class="normal"><a href="#__codelineno-0-176">176</a></span>
 <span class="normal"><a href="#__codelineno-0-177">177</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-110" name="__codelineno-0-110"></a><span class="nd">@runtime_checkable</span>
 <a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMProvider</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-<a id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-113" name="__codelineno-0-113"></a><span class="sd">    Protocol for LLM providers.</span>
 <a id="__codelineno-0-114" name="__codelineno-0-114"></a>
 <a id="__codelineno-0-115" name="__codelineno-0-115"></a><span class="sd">    Implementations wrap a specific LLM service behind a uniform interface.</span>
@@ -1975,7 +1975,7 @@ your agent code.</p>
 <a id="__codelineno-0-126" name="__codelineno-0-126"></a>
 <a id="__codelineno-0-127" name="__codelineno-0-127"></a><span class="sd">    Example implementation:</span>
 <a id="__codelineno-0-128" name="__codelineno-0-128"></a><span class="sd">        class OllamaProvider:</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a><span class="sd">            def __init__(self, model: str = &quot;llama3.1:70b&quot;):</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a><span class="sd">            def __init__(self, model: str = "llama3.1:70b"):</span>
 <a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="sd">                self.model = model</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a><span class="sd">                self.client = ollama.AsyncClient()</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132"></a>
@@ -1989,15 +1989,15 @@ your agent code.</p>
 <a id="__codelineno-0-140" name="__codelineno-0-140"></a><span class="sd">            ) -&gt; LLMResponse:</span>
 <a id="__codelineno-0-141" name="__codelineno-0-141"></a><span class="sd">                response = await self.client.chat(</span>
 <a id="__codelineno-0-142" name="__codelineno-0-142"></a><span class="sd">                    model=self.model,</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a><span class="sd">                    messages=[{&quot;role&quot;: m.role, &quot;content&quot;: m.content} for m in messages],</span>
-<a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="sd">                    options={&quot;temperature&quot;: temperature, &quot;num_predict&quot;: max_tokens},</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">                    format=&quot;json&quot; if json_mode else None,</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a><span class="sd">                    messages=[{"role": m.role, "content": m.content} for m in messages],</span>
+<a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="sd">                    options={"temperature": temperature, "num_predict": max_tokens},</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">                    format="json" if json_mode else None,</span>
 <a id="__codelineno-0-146" name="__codelineno-0-146"></a><span class="sd">                )</span>
 <a id="__codelineno-0-147" name="__codelineno-0-147"></a><span class="sd">                return LLMResponse(</span>
-<a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">                    content=response[&quot;message&quot;][&quot;content&quot;],</span>
+<a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">                    content=response["message"]["content"],</span>
 <a id="__codelineno-0-149" name="__codelineno-0-149"></a><span class="sd">                    model=self.model,</span>
 <a id="__codelineno-0-150" name="__codelineno-0-150"></a><span class="sd">                )</span>
-<a id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="sd">    """</span>
 <a id="__codelineno-0-152" name="__codelineno-0-152"></a>
 <a id="__codelineno-0-153" name="__codelineno-0-153"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">complete</span><span class="p">(</span>
 <a id="__codelineno-0-154" name="__codelineno-0-154"></a>        <span class="bp">self</span><span class="p">,</span>
@@ -2007,7 +2007,7 @@ your agent code.</p>
 <a id="__codelineno-0-158" name="__codelineno-0-158"></a>        <span class="n">json_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-0-159" name="__codelineno-0-159"></a>        <span class="n">tools</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ToolDefinition</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-160" name="__codelineno-0-160"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LLMResponse</span><span class="p">:</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="w">        </span><span class="sd">"""</span>
 <a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">        Send messages to the LLM and get a response.</span>
 <a id="__codelineno-0-163" name="__codelineno-0-163"></a>
 <a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">        Args:</span>
@@ -2018,11 +2018,11 @@ your agent code.</p>
 <a id="__codelineno-0-169" name="__codelineno-0-169"></a><span class="sd">            tools: Optional list of tools the LLM can call.</span>
 <a id="__codelineno-0-170" name="__codelineno-0-170"></a>
 <a id="__codelineno-0-171" name="__codelineno-0-171"></a><span class="sd">        Returns:</span>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a><span class="sd">            LLMResponse with the model&#39;s response text and optional metadata.</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a><span class="sd">            LLMResponse with the model's response text and optional metadata.</span>
 <a id="__codelineno-0-173" name="__codelineno-0-173"></a>
 <a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="sd">        Raises:</span>
 <a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">            Exception: If the LLM call fails (implementation-specific).</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="sd">        """</span>
 <a id="__codelineno-0-177" name="__codelineno-0-177"></a>        <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2248,7 +2248,7 @@ your agent code.</p>
 <a id="__codelineno-0-158" name="__codelineno-0-158"></a>    <span class="n">json_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-0-159" name="__codelineno-0-159"></a>    <span class="n">tools</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ToolDefinition</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LLMResponse</span><span class="p">:</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">    Send messages to the LLM and get a response.</span>
 <a id="__codelineno-0-163" name="__codelineno-0-163"></a>
 <a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">    Args:</span>
@@ -2259,11 +2259,11 @@ your agent code.</p>
 <a id="__codelineno-0-169" name="__codelineno-0-169"></a><span class="sd">        tools: Optional list of tools the LLM can call.</span>
 <a id="__codelineno-0-170" name="__codelineno-0-170"></a>
 <a id="__codelineno-0-171" name="__codelineno-0-171"></a><span class="sd">    Returns:</span>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a><span class="sd">        LLMResponse with the model&#39;s response text and optional metadata.</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a><span class="sd">        LLMResponse with the model's response text and optional metadata.</span>
 <a id="__codelineno-0-173" name="__codelineno-0-173"></a>
 <a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="sd">    Raises:</span>
 <a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">        Exception: If the LLM call fails (implementation-specific).</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="sd">    """</span>
 <a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2413,11 +2413,11 @@ your agent code.</p>
 <span class="normal"><a href="#__codelineno-0-51">51</a></span>
 <span class="normal"><a href="#__codelineno-0-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="nd">@dataclass</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMMessage</span><span class="p">:</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">    A single message in an LLM conversation.</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">    Attributes:</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">        role: Message role - &quot;system&quot;, &quot;user&quot;, or &quot;assistant&quot;</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">        role: Message role - "system", "user", or "assistant"</span>
 <a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="sd">        content: Message content (text)</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">        name: Optional name for the message sender</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">        tool_calls: Optional list of tool calls (for assistant messages)</span>
@@ -2425,13 +2425,13 @@ your agent code.</p>
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a>
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">    Example:</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="sd">        messages = [</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">            LLMMessage(role=&quot;system&quot;, content=&quot;You are a helpful assistant.&quot;),</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">            LLMMessage(role=&quot;user&quot;, content=&quot;What&#39;s 2+2?&quot;),</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">            LLMMessage(role=&quot;assistant&quot;, content=&quot;2+2 equals 4.&quot;),</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">            LLMMessage(role="system", content="You are a helpful assistant."),</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">            LLMMessage(role="user", content="What's 2+2?"),</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">            LLMMessage(role="assistant", content="2+2 equals 4."),</span>
 <a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">        ]</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">    """</span>
 <a id="__codelineno-0-47" name="__codelineno-0-47"></a>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">role</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># &quot;system&quot;, &quot;user&quot;, &quot;assistant&quot;, &quot;tool&quot;</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">role</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># "system", "user", "assistant", "tool"</span>
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">tool_calls</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -2590,11 +2590,11 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <span class="normal"><a href="#__codelineno-0-76">76</a></span>
 <span class="normal"><a href="#__codelineno-0-77">77</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="nd">@dataclass</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMResponse</span><span class="p">:</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    Response from an LLM provider.</span>
 <a id="__codelineno-0-59" name="__codelineno-0-59"></a>
 <a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">    Attributes:</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        content: The model&#39;s response text</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        content: The model's response text</span>
 <a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">        usage: Optional token usage statistics</span>
 <a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">        model: Optional model identifier</span>
 <a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">        tool_calls: Optional list of tool calls requested by the model</span>
@@ -2603,8 +2603,8 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="sd">    Example:</span>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">        response = await provider.complete(messages)</span>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">        print(response.content)</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">        print(f&quot;Tokens used: {response.usage.get(&#39;total_tokens&#39;, &#39;unknown&#39;)}&quot;)</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">        print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    """</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="n">usage</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -2757,7 +2757,7 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <span class="normal"><a href="#__codelineno-0-106">106</a></span>
 <span class="normal"><a href="#__codelineno-0-107">107</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="nd">@dataclass</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="k">class</span><span class="w"> </span><span class="nc">ToolDefinition</span><span class="p">:</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="sd">    Definition of a tool that can be called by the LLM.</span>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a>
 <a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">    Attributes:</span>
@@ -2767,18 +2767,18 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-0-89" name="__codelineno-0-89"></a>
 <a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">    Example:</span>
 <a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="sd">        search_tool = ToolDefinition(</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="sd">            name=&quot;search_database&quot;,</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="sd">            description=&quot;Search the database for records&quot;,</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="sd">            name="search_database",</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="sd">            description="Search the database for records",</span>
 <a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="sd">            parameters={</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">                &quot;type&quot;: &quot;object&quot;,</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">                &quot;properties&quot;: {</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">                    &quot;query&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;Search query&quot;},</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">                    &quot;limit&quot;: {&quot;type&quot;: &quot;integer&quot;, &quot;default&quot;: 10}</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">                "type": "object",</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">                "properties": {</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">                    "query": {"type": "string", "description": "Search query"},</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">                    "limit": {"type": "integer", "default": 10}</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">                },</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">                &quot;required&quot;: [&quot;query&quot;]</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">                "required": ["query"]</span>
 <a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">            }</span>
 <a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="sd">        )</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    """</span>
 <a id="__codelineno-0-104" name="__codelineno-0-104"></a>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
@@ -2817,9 +2817,9 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">)</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyCustomProvider</span><span class="p">:</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Custom LLM provider for your own service.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="sd">"""Custom LLM provider for your own service."""</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;my-model&quot;</span><span class="p">):</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"my-model"</span><span class="p">):</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">MyLLMClient</span><span class="p">(</span><span class="n">api_key</span><span class="p">)</span>
@@ -2832,29 +2832,29 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="n">json_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="n">tools</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ToolDefinition</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LLMResponse</span><span class="p">:</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Call your LLM service.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="sd">"""Call your LLM service."""</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="c1"># Convert messages to your API format</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        <span class="n">api_messages</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">role</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">role</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">messages</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        <span class="p">]</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="c1"># Build request</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="n">request</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">api_messages</span><span class="p">,</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>            <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="n">max_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>            <span class="s2">"messages"</span><span class="p">:</span> <span class="n">api_messages</span><span class="p">,</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>            <span class="s2">"temperature"</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>            <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="n">max_tokens</span><span class="p">,</span>
 <a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        <span class="p">}</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
 <a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        <span class="k">if</span> <span class="n">json_mode</span><span class="p">:</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>            <span class="n">request</span><span class="p">[</span><span class="s2">&quot;response_format&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;json&quot;</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>            <span class="n">request</span><span class="p">[</span><span class="s2">"response_format"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"json"</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
 <a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>        <span class="k">if</span> <span class="n">tools</span><span class="p">:</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>            <span class="n">request</span><span class="p">[</span><span class="s2">&quot;tools&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>            <span class="n">request</span><span class="p">[</span><span class="s2">"tools"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>                <span class="p">{</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>                    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>                    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>                    <span class="s2">"name"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>                    <span class="s2">"description"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>                    <span class="s2">"parameters"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
 <a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>                <span class="p">}</span>
 <a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>                <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tools</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>            <span class="p">]</span>
@@ -2867,9 +2867,9 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
 <a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>            <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
 <a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>            <span class="n">usage</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>                <span class="s2">&quot;prompt_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">prompt_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>                <span class="s2">&quot;completion_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">completion_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>                <span class="s2">&quot;total_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">total_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>                <span class="s2">"prompt_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">prompt_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>                <span class="s2">"completion_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">completion_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>                <span class="s2">"total_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">total_tokens</span><span class="p">,</span>
 <a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>            <span class="p">},</span>
 <a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>        <span class="p">)</span>
 </code></pre></div>
@@ -2881,20 +2881,20 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">LLMMessage</span><span class="p">(</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">&quot;system&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;You are a helpful assistant.&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">"system"</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">"You are a helpful assistant."</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="p">),</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">LLMMessage</span><span class="p">(</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;What is 2+2?&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">"What is 2+2?"</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="p">),</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">LLMMessage</span><span class="p">(</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;2+2 equals 4.&quot;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">"assistant"</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">"2+2 equals 4."</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="p">),</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="n">LLMMessage</span><span class="p">(</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;And 3+3?&quot;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">content</span><span class="o">=</span><span class="s2">"And 3+3?"</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="p">),</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">]</span>
 </code></pre></div>
@@ -2907,10 +2907,10 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <p>The response from a provider:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">provider</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>           <span class="c1"># The LLM&#39;s response text</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>           <span class="c1"># The LLM's response text</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>              <span class="c1"># Model identifier</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">)</span>              <span class="c1"># {&quot;prompt_tokens&quot;: N, &quot;completion_tokens&quot;: N, &quot;total_tokens&quot;: N}</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">finish_reason</span><span class="p">)</span>      <span class="c1"># &quot;stop&quot;, &quot;length&quot;, &quot;tool_calls&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">)</span>              <span class="c1"># {"prompt_tokens": N, "completion_tokens": N, "total_tokens": N}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">finish_reason</span><span class="p">)</span>      <span class="c1"># "stop", "length", "tool_calls"</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">)</span>         <span class="c1"># Tool calls if any</span>
 </code></pre></div>
 <hr />
@@ -2930,14 +2930,14 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <p>Request structured JSON output:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Extract: name, age, role from the text...&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Extract: name, age, role from the text..."</span><span class="p">)</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="p">],</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">json_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Request JSON output</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">)</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30, &quot;role&quot;: &quot;Engineer&quot;}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># {"name": "Alice", "age": 30, "role": "Engineer"}</span>
 </code></pre></div>
 <p>Not all providers support JSON mode. Check provider documentation.</p>
 <h3 id="max-tokens">Max Tokens<a class="headerlink" href="#max-tokens" title="Permanent link">&para;</a></h3>
@@ -2954,41 +2954,41 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">tools</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">ToolDefinition</span><span class="p">(</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;search&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Search the knowledge base&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">"search"</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">"Search the knowledge base"</span><span class="p">,</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">parameters</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>                <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Search query&quot;</span><span class="p">},</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>                <span class="s2">"query"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Search query"</span><span class="p">},</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                <span class="s2">"limit"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            <span class="p">},</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="s2">"required"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"query"</span><span class="p">]</span>
 <a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="p">}</span>
 <a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="p">),</span>
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">ToolDefinition</span><span class="p">(</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;calculate&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Perform calculations&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">"calculate"</span><span class="p">,</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">"Perform calculations"</span><span class="p">,</span>
 <a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>        <span class="n">parameters</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>                <span class="s2">&quot;expression&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Math expression&quot;</span><span class="p">}</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>            <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>                <span class="s2">"expression"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span> <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Math expression"</span><span class="p">}</span>
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>            <span class="p">},</span>
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;expression&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>            <span class="s2">"required"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"expression"</span><span class="p">]</span>
 <a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>        <span class="p">}</span>
 <a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="p">),</span>
 <a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="p">]</span>
 <a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
 <a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
 <a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;What is 2+2 and search for Python?&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"What is 2+2 and search for Python?"</span><span class="p">)</span>
 <a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>    <span class="p">],</span>
 <a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
 <a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="p">)</span>
 <a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
 <a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
 <a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>    <span class="k">for</span> <span class="n">call</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
-<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tool: </span><span class="si">{</span><span class="n">call</span><span class="p">[</span><span class="s1">&#39;function&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Args: </span><span class="si">{</span><span class="n">call</span><span class="p">[</span><span class="s1">&#39;function&#39;</span><span class="p">][</span><span class="s1">&#39;arguments&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tool: </span><span class="si">{</span><span class="n">call</span><span class="p">[</span><span class="s1">'function'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Args: </span><span class="si">{</span><span class="n">call</span><span class="p">[</span><span class="s1">'function'</span><span class="p">][</span><span class="s1">'arguments'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="built-in-providers">Built-in Providers<a class="headerlink" href="#built-in-providers" title="Permanent link">&para;</a></h2>
@@ -2996,7 +2996,7 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <h3 id="ollama-local">Ollama (Local)<a class="headerlink" href="#ollama-local" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core.providers</span><span class="w"> </span><span class="kn">import</span> <span class="n">OllamaProvider</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OllamaProvider</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen2.5:72b&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OllamaProvider</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"qwen2.5:72b"</span><span class="p">)</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 </code></pre></div>
 <p>Best for:
@@ -3008,8 +3008,8 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncOpenAI</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core.providers</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIProvider</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncOpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncOpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">"sk-..."</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o"</span><span class="p">)</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 </code></pre></div>
 <p>Best for:
@@ -3021,8 +3021,8 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">anthropic</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncAnthropic</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core.providers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnthropicProvider</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncAnthropic</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;sk-ant-...&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">AnthropicProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;claude-3-5-sonnet-20241022&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncAnthropic</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">"sk-ant-..."</span><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">AnthropicProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"claude-3-5-sonnet-20241022"</span><span class="p">)</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 </code></pre></div>
 <p>Best for:
@@ -3069,7 +3069,7 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <h2 id="swapping-providers">Swapping Providers<a class="headerlink" href="#swapping-providers" title="Permanent link">&para;</a></h2>
 <p>The power of protocols: change LLM without changing agent code.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Start with Ollama (free, local)</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OllamaProvider</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen2.5:7b&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OllamaProvider</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">"qwen2.5:7b"</span><span class="p">)</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Agent code</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">my_agent_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
@@ -3080,7 +3080,7 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncOpenAI</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core.providers</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIProvider</span>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">AsyncOpenAI</span><span class="p">(),</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">AsyncOpenAI</span><span class="p">(),</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o"</span><span class="p">)</span>
 <a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
 <a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c1"># Same agent code works!</span>
 <a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="bp">self</span><span class="o">.</span><span class="n">llm</span> <span class="o">=</span> <span class="n">llm</span>  <span class="c1"># Just swap the provider</span>
@@ -3092,11 +3092,11 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LLM service unreachable&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"LLM service unreachable"</span><span class="p">)</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid parameters&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid parameters"</span><span class="p">)</span>
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"LLM error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
@@ -3246,7 +3246,7 @@ print(f"Tokens used: {response.usage.get('total_tokens', 'unknown')}")</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

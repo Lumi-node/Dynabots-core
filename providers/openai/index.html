@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2041,12 +2041,12 @@
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <h3 id="openai-api-key">OpenAI API Key<a class="headerlink" href="#openai-api-key" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Get your API key from https://platform.openai.com/api-keys</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">"sk-..."</span>
 </code></pre></div>
 <h3 id="azure-openai">Azure OpenAI<a class="headerlink" href="#azure-openai" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># For Azure OpenAI, also set:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_OPENAI_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_OPENAI_ENDPOINT</span><span class="o">=</span><span class="s2">&quot;https://your-resource.openai.azure.com&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_OPENAI_KEY</span><span class="o">=</span><span class="s2">"..."</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AZURE_OPENAI_ENDPOINT</span><span class="o">=</span><span class="s2">"https://your-resource.openai.azure.com"</span>
 </code></pre></div>
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
@@ -2056,17 +2056,17 @@
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLMMessage</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncOpenAI</span><span class="p">()</span>  <span class="c1"># Uses OPENAI_API_KEY env var</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o"</span><span class="p">)</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">([</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;What is 2+2?&quot;</span><span class="p">),</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"What is 2+2?"</span><span class="p">),</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">])</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>  <span class="c1"># &quot;4&quot;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>  <span class="c1"># "4"</span>
 </code></pre></div>
 <h3 id="custom-api-key">Custom API Key<a class="headerlink" href="#custom-api-key" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncOpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncOpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">"sk-..."</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
@@ -2093,7 +2093,7 @@
 <p>Structured output:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Extract name and age: ...&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"Extract name and age: ..."</span><span class="p">)</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">],</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">json_mode</span><span class="o">=</span><span class="kc">True</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">)</span>
@@ -2107,29 +2107,29 @@
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">tools</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">ToolDefinition</span><span class="p">(</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;get_weather&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Get current weather&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">"get_weather"</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">"Get current weather"</span><span class="p">,</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="n">parameters</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>                <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"object"</span><span class="p">,</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>            <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>                <span class="s2">"location"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">}</span>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>            <span class="p">},</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">]</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>            <span class="s2">"required"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"location"</span><span class="p">]</span>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>        <span class="p">}</span>
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="p">)</span>
 <a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="p">]</span>
 <a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
 <a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
 <a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">&quot;What&#39;s the weather in San Francisco?&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="s2">"What's the weather in San Francisco?"</span><span class="p">)</span>
 <a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    <span class="p">],</span>
 <a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span>
 <a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="p">)</span>
 <a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
 <a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
 <a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>    <span class="k">for</span> <span class="n">call</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>        <span class="n">tool_name</span> <span class="o">=</span> <span class="n">call</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>        <span class="n">tool_args</span> <span class="o">=</span> <span class="n">call</span><span class="p">[</span><span class="s2">&quot;function&quot;</span><span class="p">][</span><span class="s2">&quot;arguments&quot;</span><span class="p">]</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>        <span class="n">tool_name</span> <span class="o">=</span> <span class="n">call</span><span class="p">[</span><span class="s2">"function"</span><span class="p">][</span><span class="s2">"name"</span><span class="p">]</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>        <span class="n">tool_args</span> <span class="o">=</span> <span class="n">call</span><span class="p">[</span><span class="s2">"function"</span><span class="p">][</span><span class="s2">"arguments"</span><span class="p">]</span>
 <a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>        <span class="c1"># Execute tool...</span>
 </code></pre></div>
 <hr />
@@ -2141,10 +2141,10 @@
 <li><strong>gpt-3.5-turbo</strong> - Older, not recommended for new projects</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Production</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o"</span><span class="p">)</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Cost-conscious</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o-mini"</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="model-comparison">Model Comparison<a class="headerlink" href="#model-comparison" title="Permanent link">&para;</a></h3>
 <table>
@@ -2331,27 +2331,27 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <span class="normal"><a href="#__codelineno-0-144">144</a></span>
 <span class="normal"><a href="#__codelineno-0-145">145</a></span>
 <span class="normal"><a href="#__codelineno-0-146">146</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="k">class</span><span class="w"> </span><span class="nc">OpenAIProvider</span><span class="p">:</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="sd">    LLMProvider implementation for OpenAI and Azure OpenAI.</span>
 <a id="__codelineno-0-40" name="__codelineno-0-40"></a>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="sd">    Example:</span>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">        from openai import AsyncOpenAI</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">        client = AsyncOpenAI(api_key=&quot;sk-...&quot;)</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">        llm = OpenAIProvider(client, model=&quot;gpt-4o&quot;)</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">        client = AsyncOpenAI(api_key="sk-...")</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">        llm = OpenAIProvider(client, model="gpt-4o")</span>
 <a id="__codelineno-0-45" name="__codelineno-0-45"></a>
 <a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="sd">        response = await llm.complete([</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">            LLMMessage(role=&quot;user&quot;, content=&quot;Hello!&quot;)</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">            LLMMessage(role="user", content="Hello!")</span>
 <a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">        ])</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">    """</span>
 <a id="__codelineno-0-50" name="__codelineno-0-50"></a>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"gpt-4o"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">        </span><span class="sd">"""</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        Initialize the OpenAI provider.</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">        Args:</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">            client: An AsyncOpenAI or AsyncAzureOpenAI client instance.</span>
 <a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">            model: Model name (OpenAI) or deployment name (Azure).</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">        """</span>
 <a id="__codelineno-0-59" name="__codelineno-0-59"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
 <a id="__codelineno-0-60" name="__codelineno-0-60"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">model</span>
 <a id="__codelineno-0-61" name="__codelineno-0-61"></a>
@@ -2363,7 +2363,7 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="n">json_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="n">tools</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ToolDefinition</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LLMResponse</span><span class="p">:</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">        </span><span class="sd">"""</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        Send messages to OpenAI and get a response.</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">        Args:</span>
@@ -2374,29 +2374,29 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">            tools: Optional list of tools for function calling.</span>
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">        Returns:</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">            LLMResponse with the model&#39;s output.</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">            LLMResponse with the model's output.</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">        """</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>        <span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a>            <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>                <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">role</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>            <span class="s2">"model"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>            <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>                <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">role</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
 <a id="__codelineno-0-87" name="__codelineno-0-87"></a>                <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">messages</span>
 <a id="__codelineno-0-88" name="__codelineno-0-88"></a>            <span class="p">],</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>            <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="n">max_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>            <span class="s2">"temperature"</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>            <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="n">max_tokens</span><span class="p">,</span>
 <a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="p">}</span>
 <a id="__codelineno-0-92" name="__codelineno-0-92"></a>
 <a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="k">if</span> <span class="n">json_mode</span><span class="p">:</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;response_format&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;json_object&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="n">kwargs</span><span class="p">[</span><span class="s2">"response_format"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"json_object"</span><span class="p">}</span>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a>
 <a id="__codelineno-0-96" name="__codelineno-0-96"></a>        <span class="k">if</span> <span class="n">tools</span><span class="p">:</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;tools&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>            <span class="n">kwargs</span><span class="p">[</span><span class="s2">"tools"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a>                <span class="p">{</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>                    <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>                        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>                        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>                        <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>                    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"function"</span><span class="p">,</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>                    <span class="s2">"function"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>                        <span class="s2">"name"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>                        <span class="s2">"description"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>                        <span class="s2">"parameters"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
 <a id="__codelineno-0-104" name="__codelineno-0-104"></a>                    <span class="p">},</span>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>                <span class="p">}</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>                <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tools</span>
@@ -2408,9 +2408,9 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-112" name="__codelineno-0-112"></a>        <span class="n">usage</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-113" name="__codelineno-0-113"></a>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">:</span>
 <a id="__codelineno-0-114" name="__codelineno-0-114"></a>            <span class="n">usage</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-115" name="__codelineno-0-115"></a>                <span class="s2">&quot;prompt_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">prompt_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-116" name="__codelineno-0-116"></a>                <span class="s2">&quot;completion_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">completion_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-117" name="__codelineno-0-117"></a>                <span class="s2">&quot;total_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">total_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-115" name="__codelineno-0-115"></a>                <span class="s2">"prompt_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">prompt_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-116" name="__codelineno-0-116"></a>                <span class="s2">"completion_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">completion_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-117" name="__codelineno-0-117"></a>                <span class="s2">"total_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">total_tokens</span><span class="p">,</span>
 <a id="__codelineno-0-118" name="__codelineno-0-118"></a>            <span class="p">}</span>
 <a id="__codelineno-0-119" name="__codelineno-0-119"></a>
 <a id="__codelineno-0-120" name="__codelineno-0-120"></a>        <span class="c1"># Extract tool calls</span>
@@ -2418,18 +2418,18 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-122" name="__codelineno-0-122"></a>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
 <a id="__codelineno-0-123" name="__codelineno-0-123"></a>            <span class="n">tool_calls</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-0-124" name="__codelineno-0-124"></a>                <span class="p">{</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>                    <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a>                        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>                        <span class="s2">&quot;arguments&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span><span class="p">,</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>                    <span class="s2">"id"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>                    <span class="s2">"type"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a>                    <span class="s2">"function"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-128" name="__codelineno-0-128"></a>                        <span class="s2">"name"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>                        <span class="s2">"arguments"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span><span class="p">,</span>
 <a id="__codelineno-0-130" name="__codelineno-0-130"></a>                    <span class="p">},</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a>                <span class="p">}</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132"></a>                <span class="k">for</span> <span class="n">tc</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">tool_calls</span>
 <a id="__codelineno-0-133" name="__codelineno-0-133"></a>            <span class="p">]</span>
 <a id="__codelineno-0-134" name="__codelineno-0-134"></a>
 <a id="__codelineno-0-135" name="__codelineno-0-135"></a>        <span class="k">return</span> <span class="n">LLMResponse</span><span class="p">(</span>
-<a id="__codelineno-0-136" name="__codelineno-0-136"></a>            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-136" name="__codelineno-0-136"></a>            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">,</span>
 <a id="__codelineno-0-137" name="__codelineno-0-137"></a>            <span class="n">usage</span><span class="o">=</span><span class="n">usage</span><span class="p">,</span>
 <a id="__codelineno-0-138" name="__codelineno-0-138"></a>            <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span>
 <a id="__codelineno-0-139" name="__codelineno-0-139"></a>            <span class="n">tool_calls</span><span class="o">=</span><span class="n">tool_calls</span><span class="p">,</span>
@@ -2438,7 +2438,7 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-142" name="__codelineno-0-142"></a>
 <a id="__codelineno-0-143" name="__codelineno-0-143"></a>    <span class="nd">@property</span>
 <a id="__codelineno-0-144" name="__codelineno-0-144"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the current model name.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="w">        </span><span class="sd">"""Get the current model name."""</span>
 <a id="__codelineno-0-146" name="__codelineno-0-146"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2482,7 +2482,7 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 
 
 <h4 id="dynabots_core.providers.openai.OpenAIProvider.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;gpt-4o&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">'gpt-4o'</span><span class="p">)</span></code>
 
 <a href="#dynabots_core.providers.openai.OpenAIProvider.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -2550,14 +2550,14 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <span class="normal"><a href="#__codelineno-0-57">57</a></span>
 <span class="normal"><a href="#__codelineno-0-58">58</a></span>
 <span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"gpt-4o"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">    Initialize the OpenAI provider.</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">    Args:</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">        client: An AsyncOpenAI or AsyncAzureOpenAI client instance.</span>
 <a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">        model: Model name (OpenAI) or deployment name (Azure).</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    """</span>
 <a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
 <a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">model</span>
 </code></pre></div></td></tr></table></div>
@@ -2806,7 +2806,7 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="n">json_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="n">tools</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ToolDefinition</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LLMResponse</span><span class="p">:</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    Send messages to OpenAI and get a response.</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    Args:</span>
@@ -2817,29 +2817,29 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">        tools: Optional list of tools for function calling.</span>
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">    Returns:</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">        LLMResponse with the model&#39;s output.</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">        LLMResponse with the model's output.</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">    """</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">role</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="s2">"model"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>            <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">role</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">content</span><span class="p">}</span>
 <a id="__codelineno-0-87" name="__codelineno-0-87"></a>            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">messages</span>
 <a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="p">],</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a>        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="n">max_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a>        <span class="s2">"temperature"</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="n">max_tokens</span><span class="p">,</span>
 <a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="p">}</span>
 <a id="__codelineno-0-92" name="__codelineno-0-92"></a>
 <a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="k">if</span> <span class="n">json_mode</span><span class="p">:</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;response_format&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;json_object&quot;</span><span class="p">}</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>        <span class="n">kwargs</span><span class="p">[</span><span class="s2">"response_format"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"type"</span><span class="p">:</span> <span class="s2">"json_object"</span><span class="p">}</span>
 <a id="__codelineno-0-95" name="__codelineno-0-95"></a>
 <a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="k">if</span> <span class="n">tools</span><span class="p">:</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;tools&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="n">kwargs</span><span class="p">[</span><span class="s2">"tools"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98"></a>            <span class="p">{</span>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a>                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>                <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a>                    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a>                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a>                    <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>                <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"function"</span><span class="p">,</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>                <span class="s2">"function"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>                    <span class="s2">"name"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>                    <span class="s2">"description"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>                    <span class="s2">"parameters"</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
 <a id="__codelineno-0-104" name="__codelineno-0-104"></a>                <span class="p">},</span>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a>            <span class="p">}</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a>            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tools</span>
@@ -2851,9 +2851,9 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="n">usage</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-113" name="__codelineno-0-113"></a>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">:</span>
 <a id="__codelineno-0-114" name="__codelineno-0-114"></a>        <span class="n">usage</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-115" name="__codelineno-0-115"></a>            <span class="s2">&quot;prompt_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">prompt_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-116" name="__codelineno-0-116"></a>            <span class="s2">&quot;completion_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">completion_tokens</span><span class="p">,</span>
-<a id="__codelineno-0-117" name="__codelineno-0-117"></a>            <span class="s2">&quot;total_tokens&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">total_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-115" name="__codelineno-0-115"></a>            <span class="s2">"prompt_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">prompt_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-116" name="__codelineno-0-116"></a>            <span class="s2">"completion_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">completion_tokens</span><span class="p">,</span>
+<a id="__codelineno-0-117" name="__codelineno-0-117"></a>            <span class="s2">"total_tokens"</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">total_tokens</span><span class="p">,</span>
 <a id="__codelineno-0-118" name="__codelineno-0-118"></a>        <span class="p">}</span>
 <a id="__codelineno-0-119" name="__codelineno-0-119"></a>
 <a id="__codelineno-0-120" name="__codelineno-0-120"></a>    <span class="c1"># Extract tool calls</span>
@@ -2861,18 +2861,18 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-0-122" name="__codelineno-0-122"></a>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">tool_calls</span><span class="p">:</span>
 <a id="__codelineno-0-123" name="__codelineno-0-123"></a>        <span class="n">tool_calls</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-0-124" name="__codelineno-0-124"></a>            <span class="p">{</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>                <span class="s2">&quot;function&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a>                    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>                    <span class="s2">&quot;arguments&quot;</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span><span class="p">,</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>                <span class="s2">"id"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>                <span class="s2">"type"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a>                <span class="s2">"function"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-0-128" name="__codelineno-0-128"></a>                    <span class="s2">"name"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>                    <span class="s2">"arguments"</span><span class="p">:</span> <span class="n">tc</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">arguments</span><span class="p">,</span>
 <a id="__codelineno-0-130" name="__codelineno-0-130"></a>                <span class="p">},</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a>            <span class="p">}</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132"></a>            <span class="k">for</span> <span class="n">tc</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">tool_calls</span>
 <a id="__codelineno-0-133" name="__codelineno-0-133"></a>        <span class="p">]</span>
 <a id="__codelineno-0-134" name="__codelineno-0-134"></a>
 <a id="__codelineno-0-135" name="__codelineno-0-135"></a>    <span class="k">return</span> <span class="n">LLMResponse</span><span class="p">(</span>
-<a id="__codelineno-0-136" name="__codelineno-0-136"></a>        <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-136" name="__codelineno-0-136"></a>        <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">,</span>
 <a id="__codelineno-0-137" name="__codelineno-0-137"></a>        <span class="n">usage</span><span class="o">=</span><span class="n">usage</span><span class="p">,</span>
 <a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">,</span>
 <a id="__codelineno-0-139" name="__codelineno-0-139"></a>        <span class="n">tool_calls</span><span class="o">=</span><span class="n">tool_calls</span><span class="p">,</span>
@@ -2897,13 +2897,13 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core.providers</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAIProvider</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AsyncAzureOpenAI</span><span class="p">(</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">azure_endpoint</span><span class="o">=</span><span class="s2">&quot;https://my-resource.openai.azure.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">api_version</span><span class="o">=</span><span class="s2">&quot;2024-02-01&quot;</span><span class="p">,</span>  <span class="c1"># Use latest version</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">azure_endpoint</span><span class="o">=</span><span class="s2">"https://my-resource.openai.azure.com"</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">api_key</span><span class="o">=</span><span class="s2">"your-api-key"</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">api_version</span><span class="o">=</span><span class="s2">"2024-02-01"</span><span class="p">,</span>  <span class="c1"># Use latest version</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="p">)</span>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1"># Use same provider class</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;my-deployment-name&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"my-deployment-name"</span><span class="p">)</span>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 </code></pre></div>
@@ -2911,10 +2911,10 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <h2 id="cost-optimization">Cost Optimization<a class="headerlink" href="#cost-optimization" title="Permanent link">&para;</a></h2>
 <h3 id="model-selection_1">Model Selection<a class="headerlink" href="#model-selection_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Most expensive</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>  <span class="c1"># $0.03/$0.06 per 1M tokens</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o"</span><span class="p">)</span>  <span class="c1"># $0.03/$0.06 per 1M tokens</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Cheaper</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">)</span>  <span class="c1"># $0.15/$0.60 per 1M tokens</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">llm</span> <span class="o">=</span> <span class="n">OpenAIProvider</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"gpt-4o-mini"</span><span class="p">)</span>  <span class="c1"># $0.15/$0.60 per 1M tokens</span>
 </code></pre></div>
 <h3 id="token-limits">Token Limits<a class="headerlink" href="#token-limits" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Shorter responses = lower cost</span>
@@ -2933,12 +2933,12 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="k">if</span> <span class="s2">&quot;rate_limit&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rate limited, retry later&quot;</span><span class="p">)</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="k">elif</span> <span class="s2">&quot;invalid_api_key&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check OPENAI_API_KEY&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="k">if</span> <span class="s2">"rate_limit"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Rate limited, retry later"</span><span class="p">)</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="k">elif</span> <span class="s2">"invalid_api_key"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Check OPENAI_API_KEY"</span><span class="p">)</span>
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="usage-statistics">Usage Statistics<a class="headerlink" href="#usage-statistics" title="Permanent link">&para;</a></h2>
@@ -2947,15 +2947,15 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">)</span>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># {</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">#     &quot;prompt_tokens&quot;: 50,</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">#     &quot;completion_tokens&quot;: 25,</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1">#     &quot;total_tokens&quot;: 75</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">#     "prompt_tokens": 50,</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">#     "completion_tokens": 25,</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1">#     "total_tokens": 75</span>
 <a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1"># }</span>
 <a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
 <a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="c1"># Estimate cost</span>
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="s2">&quot;prompt_tokens&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.03</span> <span class="o">+</span>
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>        <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="s2">&quot;completion_tokens&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.06</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1_000_000</span>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cost: $</span><span class="si">{</span><span class="n">cost</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="n">cost</span> <span class="o">=</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="s2">"prompt_tokens"</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.03</span> <span class="o">+</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>        <span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="p">[</span><span class="s2">"completion_tokens"</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.06</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1_000_000</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Cost: $</span><span class="si">{</span><span class="n">cost</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
@@ -2977,10 +2977,10 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
 <a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>        <span class="k">try</span><span class="p">:</span>
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>            <span class="k">return</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>            <span class="k">if</span> <span class="s2">&quot;rate_limit&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>            <span class="k">if</span> <span class="s2">"rate_limit"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
 <a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>                <span class="k">raise</span>
 <a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>            <span class="n">wait</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">attempt</span>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rate limited, waiting </span><span class="si">{</span><span class="n">wait</span><span class="si">}</span><span class="s2">s...&quot;</span><span class="p">)</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Rate limited, waiting </span><span class="si">{</span><span class="n">wait</span><span class="si">}</span><span class="s2">s..."</span><span class="p">)</span>
 <a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">wait</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="quota-exceeded">Quota Exceeded<a class="headerlink" href="#quota-exceeded" title="Permanent link">&para;</a></h3>
@@ -3125,7 +3125,7 @@ llm = OpenAIProvider(client, model="gpt-4o")</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

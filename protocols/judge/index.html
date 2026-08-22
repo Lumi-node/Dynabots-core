@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1806,7 +1806,7 @@ to determine which agent performed better on a given task.</p>
 <div class="highlight"><pre><span></span><code>    winner = max(scores, key=scores.get)
     return Verdict(
         winner=winner,
-        reasoning=f&quot;Highest combined score: {scores[winner]}&quot;,
+        reasoning=f"Highest combined score: {scores[winner]}",
         scores=scores
     )
 </code></pre></div>
@@ -1881,7 +1881,7 @@ to determine which agent performed better on a given task.</p>
 <span class="normal"><a href="#__codelineno-0-188">188</a></span>
 <span class="normal"><a href="#__codelineno-0-189">189</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="nd">@runtime_checkable</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a><span class="k">class</span><span class="w"> </span><span class="nc">Judge</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-<a id="__codelineno-0-132" name="__codelineno-0-132"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-132" name="__codelineno-0-132"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-133" name="__codelineno-0-133"></a><span class="sd">    Protocol for evaluating agent submissions.</span>
 <a id="__codelineno-0-134" name="__codelineno-0-134"></a>
 <a id="__codelineno-0-135" name="__codelineno-0-135"></a><span class="sd">    Judges are used in competitive orchestration frameworks (like Orc!!)</span>
@@ -1913,17 +1913,17 @@ to determine which agent performed better on a given task.</p>
 <a id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="sd">                winner = max(scores, key=scores.get)</span>
 <a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">                return Verdict(</span>
 <a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="sd">                    winner=winner,</span>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">                    reasoning=f&quot;Highest combined score: {scores[winner]}&quot;,</span>
+<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">                    reasoning=f"Highest combined score: {scores[winner]}",</span>
 <a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">                    scores=scores</span>
 <a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">                )</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="sd">    """</span>
 <a id="__codelineno-0-168" name="__codelineno-0-168"></a>
 <a id="__codelineno-0-169" name="__codelineno-0-169"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span>
 <a id="__codelineno-0-170" name="__codelineno-0-170"></a>        <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-0-171" name="__codelineno-0-171"></a>        <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-172" name="__codelineno-0-172"></a>        <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-0-173" name="__codelineno-0-173"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="w">        </span><span class="sd">"""</span>
 <a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">        Evaluate multiple submissions and determine a winner.</span>
 <a id="__codelineno-0-176" name="__codelineno-0-176"></a>
 <a id="__codelineno-0-177" name="__codelineno-0-177"></a><span class="sd">        Args:</span>
@@ -1935,9 +1935,9 @@ to determine which agent performed better on a given task.</p>
 <a id="__codelineno-0-183" name="__codelineno-0-183"></a>
 <a id="__codelineno-0-184" name="__codelineno-0-184"></a><span class="sd">        Note:</span>
 <a id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="sd">            - Submissions should have at least 2 entries for meaningful comparison</span>
-<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">            - If submissions are equivalent, return a tie (winner=&quot;tie&quot;)</span>
+<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">            - If submissions are equivalent, return a tie (winner="tie")</span>
 <a id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="sd">            - Include detailed reasoning for transparency</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="sd">        """</span>
 <a id="__codelineno-0-189" name="__codelineno-0-189"></a>        <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2089,7 +2089,7 @@ to determine which agent performed better on a given task.</p>
 <a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-172" name="__codelineno-0-172"></a>    <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-0-173" name="__codelineno-0-173"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">    Evaluate multiple submissions and determine a winner.</span>
 <a id="__codelineno-0-176" name="__codelineno-0-176"></a>
 <a id="__codelineno-0-177" name="__codelineno-0-177"></a><span class="sd">    Args:</span>
@@ -2101,9 +2101,9 @@ to determine which agent performed better on a given task.</p>
 <a id="__codelineno-0-183" name="__codelineno-0-183"></a>
 <a id="__codelineno-0-184" name="__codelineno-0-184"></a><span class="sd">    Note:</span>
 <a id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="sd">        - Submissions should have at least 2 entries for meaningful comparison</span>
-<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">        - If submissions are equivalent, return a tie (winner=&quot;tie&quot;)</span>
+<a id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="sd">        - If submissions are equivalent, return a tie (winner="tie")</span>
 <a id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="sd">        - Include detailed reasoning for transparency</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="sd">    """</span>
 <a id="__codelineno-0-189" name="__codelineno-0-189"></a>    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2285,25 +2285,25 @@ to determine which agent performed better on a given task.</p>
 <span class="normal"><a href="#__codelineno-0-96">96</a></span>
 <span class="normal"><a href="#__codelineno-0-97">97</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="nd">@dataclass</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="k">class</span><span class="w"> </span><span class="nc">Verdict</span><span class="p">:</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">    The result of a judge&#39;s evaluation.</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">    </span><span class="sd">"""</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">    The result of a judge's evaluation.</span>
 <a id="__codelineno-0-57" name="__codelineno-0-57"></a>
 <a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    Attributes:</span>
 <a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">        winner: Name of the winning agent</span>
 <a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">        reasoning: Explanation of why this agent won</span>
 <a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        scores: Optional per-agent scores (agent_name -&gt; score)</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">        confidence: Judge&#39;s confidence in the verdict (0.0-1.0)</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">        confidence: Judge's confidence in the verdict (0.0-1.0)</span>
 <a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">        metadata: Additional evaluation metadata</span>
 <a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">        timestamp: When the verdict was rendered</span>
 <a id="__codelineno-0-65" name="__codelineno-0-65"></a>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="sd">    Example:</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="sd">        verdict = Verdict(</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">            winner=&quot;DataAgent&quot;,</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">            reasoning=&quot;DataAgent provided more complete results with proper error handling.&quot;,</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">            scores={&quot;DataAgent&quot;: 0.85, &quot;ReportAgent&quot;: 0.72},</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">            winner="DataAgent",</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">            reasoning="DataAgent provided more complete results with proper error handling.",</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">            scores={"DataAgent": 0.85, "ReportAgent": 0.72},</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">            confidence=0.9</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">        )</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">    """</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="n">winner</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">reasoning</span><span class="p">:</span> <span class="nb">str</span>
@@ -2314,19 +2314,19 @@ to determine which agent performed better on a given task.</p>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="nd">@property</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_tie</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the verdict is a tie (no clear winner).&quot;&quot;&quot;</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;tie&quot;</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="w">        </span><span class="sd">"""Check if the verdict is a tie (no clear winner)."""</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span> <span class="o">==</span> <span class="s2">""</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"tie"</span>
 <a id="__codelineno-0-86" name="__codelineno-0-86"></a>
 <a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert to dictionary for logging/storage.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="w">        </span><span class="sd">"""Convert to dictionary for logging/storage."""</span>
 <a id="__codelineno-0-89" name="__codelineno-0-89"></a>        <span class="k">return</span> <span class="p">{</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>            <span class="s2">&quot;winner&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span><span class="p">,</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>            <span class="s2">&quot;reasoning&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reasoning</span><span class="p">,</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>            <span class="s2">&quot;scores&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">,</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>            <span class="s2">&quot;confidence&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">confidence</span><span class="p">,</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>            <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>            <span class="s2">&quot;is_tie&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_tie</span><span class="p">,</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>            <span class="s2">"winner"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span><span class="p">,</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>            <span class="s2">"reasoning"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reasoning</span><span class="p">,</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>            <span class="s2">"scores"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">,</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>            <span class="s2">"confidence"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">confidence</span><span class="p">,</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>            <span class="s2">"metadata"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>            <span class="s2">"timestamp"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>            <span class="s2">"is_tie"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_tie</span><span class="p">,</span>
 <a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2393,15 +2393,15 @@ to determine which agent performed better on a given task.</p>
 <span class="normal"><a href="#__codelineno-0-95">95</a></span>
 <span class="normal"><a href="#__codelineno-0-96">96</a></span>
 <span class="normal"><a href="#__codelineno-0-97">97</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert to dictionary for logging/storage.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="w">    </span><span class="sd">"""Convert to dictionary for logging/storage."""</span>
 <a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="k">return</span> <span class="p">{</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="s2">&quot;winner&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span><span class="p">,</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="s2">&quot;reasoning&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reasoning</span><span class="p">,</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>        <span class="s2">&quot;scores&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">,</span>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="s2">&quot;confidence&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">confidence</span><span class="p">,</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>        <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a>        <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a>        <span class="s2">&quot;is_tie&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_tie</span><span class="p">,</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="s2">"winner"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">winner</span><span class="p">,</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="s2">"reasoning"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reasoning</span><span class="p">,</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>        <span class="s2">"scores"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">,</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>        <span class="s2">"confidence"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">confidence</span><span class="p">,</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>        <span class="s2">"metadata"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>        <span class="s2">"timestamp"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>        <span class="s2">"is_tie"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_tie</span><span class="p">,</span>
 <a id="__codelineno-0-97" name="__codelineno-0-97"></a>    <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2545,16 +2545,16 @@ to determine which agent performed better on a given task.</p>
 <span class="normal"><a href="#__codelineno-0-126">126</a></span>
 <span class="normal"><a href="#__codelineno-0-127">127</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="nd">@dataclass</span>
 <a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="k">class</span><span class="w"> </span><span class="nc">Submission</span><span class="p">:</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    An agent&#39;s submission for evaluation.</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="w">    </span><span class="sd">"""</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    An agent's submission for evaluation.</span>
 <a id="__codelineno-0-104" name="__codelineno-0-104"></a>
 <a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="sd">    Attributes:</span>
 <a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="sd">        agent: Name of the agent that produced this submission</span>
-<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">        result: The agent&#39;s output (TaskResult or raw data)</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">        result: The agent's output (TaskResult or raw data)</span>
 <a id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="sd">        latency_ms: How long the agent took (milliseconds)</span>
 <a id="__codelineno-0-109" name="__codelineno-0-109"></a><span class="sd">        cost: Cost of producing this result (e.g., API costs)</span>
 <a id="__codelineno-0-110" name="__codelineno-0-110"></a><span class="sd">        metadata: Additional submission metadata</span>
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="sd">    """</span>
 <a id="__codelineno-0-112" name="__codelineno-0-112"></a>
 <a id="__codelineno-0-113" name="__codelineno-0-113"></a>    <span class="n">agent</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-0-114" name="__codelineno-0-114"></a>    <span class="n">result</span><span class="p">:</span> <span class="n">Any</span>
@@ -2563,13 +2563,13 @@ to determine which agent performed better on a given task.</p>
 <a id="__codelineno-0-117" name="__codelineno-0-117"></a>    <span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
 <a id="__codelineno-0-118" name="__codelineno-0-118"></a>
 <a id="__codelineno-0-119" name="__codelineno-0-119"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert to dictionary.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="w">        </span><span class="sd">"""Convert to dictionary."""</span>
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a>        <span class="k">return</span> <span class="p">{</span>
-<a id="__codelineno-0-122" name="__codelineno-0-122"></a>            <span class="s2">&quot;agent&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span>
-<a id="__codelineno-0-123" name="__codelineno-0-123"></a>            <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;to_dict&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a>            <span class="s2">&quot;latency_ms&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">latency_ms</span><span class="p">,</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>            <span class="s2">&quot;cost&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>            <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+<a id="__codelineno-0-122" name="__codelineno-0-122"></a>            <span class="s2">"agent"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span>
+<a id="__codelineno-0-123" name="__codelineno-0-123"></a>            <span class="s2">"result"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="s2">"to_dict"</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a>            <span class="s2">"latency_ms"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">latency_ms</span><span class="p">,</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>            <span class="s2">"cost"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>            <span class="s2">"metadata"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
 <a id="__codelineno-0-127" name="__codelineno-0-127"></a>        <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2612,13 +2612,13 @@ to determine which agent performed better on a given task.</p>
 <span class="normal"><a href="#__codelineno-0-125">125</a></span>
 <span class="normal"><a href="#__codelineno-0-126">126</a></span>
 <span class="normal"><a href="#__codelineno-0-127">127</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert to dictionary.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="w">    </span><span class="sd">"""Convert to dictionary."""</span>
 <a id="__codelineno-0-121" name="__codelineno-0-121"></a>    <span class="k">return</span> <span class="p">{</span>
-<a id="__codelineno-0-122" name="__codelineno-0-122"></a>        <span class="s2">&quot;agent&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span>
-<a id="__codelineno-0-123" name="__codelineno-0-123"></a>        <span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="s2">&quot;to_dict&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a>        <span class="s2">&quot;latency_ms&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">latency_ms</span><span class="p">,</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>        <span class="s2">&quot;cost&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>        <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+<a id="__codelineno-0-122" name="__codelineno-0-122"></a>        <span class="s2">"agent"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span>
+<a id="__codelineno-0-123" name="__codelineno-0-123"></a>        <span class="s2">"result"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="s2">"to_dict"</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a>        <span class="s2">"latency_ms"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">latency_ms</span><span class="p">,</span>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>        <span class="s2">"cost"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>        <span class="s2">"metadata"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
 <a id="__codelineno-0-127" name="__codelineno-0-127"></a>    <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2694,15 +2694,15 @@ not just compare them against each other.</p>
 <span class="normal"><a href="#__codelineno-0-219">219</a></span>
 <span class="normal"><a href="#__codelineno-0-220">220</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-192" name="__codelineno-0-192"></a><span class="nd">@runtime_checkable</span>
 <a id="__codelineno-0-193" name="__codelineno-0-193"></a><span class="k">class</span><span class="w"> </span><span class="nc">ScoringJudge</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
-<a id="__codelineno-0-194" name="__codelineno-0-194"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-194" name="__codelineno-0-194"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-195" name="__codelineno-0-195"></a><span class="sd">    Extended judge protocol that provides individual scores.</span>
 <a id="__codelineno-0-196" name="__codelineno-0-196"></a>
 <a id="__codelineno-0-197" name="__codelineno-0-197"></a><span class="sd">    Use this when you need to score submissions independently,</span>
 <a id="__codelineno-0-198" name="__codelineno-0-198"></a><span class="sd">    not just compare them against each other.</span>
-<a id="__codelineno-0-199" name="__codelineno-0-199"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-199" name="__codelineno-0-199"></a><span class="sd">    """</span>
 <a id="__codelineno-0-200" name="__codelineno-0-200"></a>
 <a id="__codelineno-0-201" name="__codelineno-0-201"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">submission</span><span class="p">:</span> <span class="n">Submission</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a><span class="w">        </span><span class="sd">"""</span>
 <a id="__codelineno-0-203" name="__codelineno-0-203"></a><span class="sd">        Score a single submission (0.0 to 1.0).</span>
 <a id="__codelineno-0-204" name="__codelineno-0-204"></a>
 <a id="__codelineno-0-205" name="__codelineno-0-205"></a><span class="sd">        Args:</span>
@@ -2711,7 +2711,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-0-208" name="__codelineno-0-208"></a>
 <a id="__codelineno-0-209" name="__codelineno-0-209"></a><span class="sd">        Returns:</span>
 <a id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="sd">            Score between 0.0 (worst) and 1.0 (best).</span>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="sd">        """</span>
 <a id="__codelineno-0-212" name="__codelineno-0-212"></a>        <span class="o">...</span>
 <a id="__codelineno-0-213" name="__codelineno-0-213"></a>
 <a id="__codelineno-0-214" name="__codelineno-0-214"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span>
@@ -2719,7 +2719,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-0-216" name="__codelineno-0-216"></a>        <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-217" name="__codelineno-0-217"></a>        <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-0-218" name="__codelineno-0-218"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate by scoring each submission and comparing.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="w">        </span><span class="sd">"""Evaluate by scoring each submission and comparing."""</span>
 <a id="__codelineno-0-220" name="__codelineno-0-220"></a>        <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2768,7 +2768,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-0-216" name="__codelineno-0-216"></a>    <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-217" name="__codelineno-0-217"></a>    <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-0-218" name="__codelineno-0-218"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Evaluate by scoring each submission and comparing.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="w">    </span><span class="sd">"""Evaluate by scoring each submission and comparing."""</span>
 <a id="__codelineno-0-220" name="__codelineno-0-220"></a>    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2883,7 +2883,7 @@ not just compare them against each other.</p>
 <span class="normal"><a href="#__codelineno-0-210">210</a></span>
 <span class="normal"><a href="#__codelineno-0-211">211</a></span>
 <span class="normal"><a href="#__codelineno-0-212">212</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-201" name="__codelineno-0-201"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">submission</span><span class="p">:</span> <span class="n">Submission</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a><span class="w">    </span><span class="sd">"""</span>
 <a id="__codelineno-0-203" name="__codelineno-0-203"></a><span class="sd">    Score a single submission (0.0 to 1.0).</span>
 <a id="__codelineno-0-204" name="__codelineno-0-204"></a>
 <a id="__codelineno-0-205" name="__codelineno-0-205"></a><span class="sd">    Args:</span>
@@ -2892,7 +2892,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-0-208" name="__codelineno-0-208"></a>
 <a id="__codelineno-0-209" name="__codelineno-0-209"></a><span class="sd">    Returns:</span>
 <a id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="sd">        Score between 0.0 (worst) and 1.0 (best).</span>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="sd">    """</span>
 <a id="__codelineno-0-212" name="__codelineno-0-212"></a>    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2913,26 +2913,26 @@ not just compare them against each other.</p>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dynabots_core.protocols.judge</span><span class="w"> </span><span class="kn">import</span> <span class="n">Submission</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">FastestWinsJudge</span><span class="p">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Judge that awards the fastest submission.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="sd">"""Judge that awards the fastest submission."""</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Winner is the fastest agent.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="sd">"""Winner is the fastest agent."""</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">submissions</span><span class="p">:</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            <span class="k">return</span> <span class="n">Verdict</span><span class="p">(</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                <span class="n">winner</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                <span class="n">reasoning</span><span class="o">=</span><span class="s2">&quot;No submissions to evaluate&quot;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                <span class="n">winner</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                <span class="n">reasoning</span><span class="o">=</span><span class="s2">"No submissions to evaluate"</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>            <span class="p">)</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="c1"># Sort by latency</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="n">fastest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">submissions</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">latency_ms</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">))</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="n">fastest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">submissions</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">latency_ms</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">(</span><span class="s1">'inf'</span><span class="p">))</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="k">return</span> <span class="n">Verdict</span><span class="p">(</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>            <span class="n">winner</span><span class="o">=</span><span class="n">fastest</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fastest</span><span class="o">.</span><span class="n">agent</span><span class="si">}</span><span class="s2"> executed fastest (</span><span class="si">{</span><span class="n">fastest</span><span class="o">.</span><span class="n">latency_ms</span><span class="si">}</span><span class="s2">ms)&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">fastest</span><span class="o">.</span><span class="n">agent</span><span class="si">}</span><span class="s2"> executed fastest (</span><span class="si">{</span><span class="n">fastest</span><span class="o">.</span><span class="n">latency_ms</span><span class="si">}</span><span class="s2">ms)"</span><span class="p">,</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>            <span class="n">scores</span><span class="o">=</span><span class="p">{</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>                <span class="n">s</span><span class="o">.</span><span class="n">agent</span><span class="p">:</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">agent</span> <span class="o">==</span> <span class="n">fastest</span><span class="o">.</span><span class="n">agent</span> <span class="k">else</span> <span class="mf">0.0</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>                <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">submissions</span>
@@ -2949,7 +2949,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMJudge</span><span class="p">:</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Judge using an LLM to evaluate submissions.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="sd">"""Judge using an LLM to evaluate submissions."""</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">llm</span><span class="p">):</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">llm</span> <span class="o">=</span> <span class="n">llm</span>
@@ -2959,14 +2959,14 @@ not just compare them against each other.</p>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Use LLM to evaluate submissions.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="sd">"""Use LLM to evaluate submissions."""</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="c1"># Format submissions for LLM</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="n">submissions_text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            <span class="sa">f</span><span class="s2">&quot;Submission from </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">agent</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="n">submissions_text</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            <span class="sa">f</span><span class="s2">"Submission from </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">agent</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span>
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">submissions</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="p">])</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;You are evaluating agent submissions for a task.</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""You are evaluating agent submissions for a task.</span>
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
 <a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="s2">Task: </span><span class="si">{</span><span class="n">task</span><span class="si">}</span>
 <a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
@@ -2981,13 +2981,13 @@ not just compare them against each other.</p>
 <a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
 <a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="s2">Provide your evaluation as JSON:</span>
 <a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="se">{{</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="s2">    &quot;winner&quot;: &quot;name of winning agent&quot;,</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="s2">    &quot;reasoning&quot;: &quot;brief explanation&quot;,</span>
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="s2">    &quot;scores&quot;: </span><span class="se">{{</span><span class="s2">&quot;agent1&quot;: 0.9, &quot;agent2&quot;: 0.7</span><span class="se">}}</span>
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="se">}}</span><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="s2">    "winner": "name of winning agent",</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="s2">    "reasoning": "brief explanation",</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="s2">    "scores": </span><span class="se">{{</span><span class="s2">"agent1": 0.9, "agent2": 0.7</span><span class="se">}}</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="se">}}</span><span class="s2">"""</span>
 <a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
 <a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">([</span>
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>            <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>            <span class="n">LLMMessage</span><span class="p">(</span><span class="n">role</span><span class="o">=</span><span class="s2">"user"</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
 <a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>        <span class="p">])</span>
 <a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
 <a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>        <span class="c1"># Parse LLM response</span>
@@ -2997,15 +2997,15 @@ not just compare them against each other.</p>
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>        <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>            <span class="c1"># Fallback: pick first</span>
 <a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>                <span class="s2">&quot;winner&quot;</span><span class="p">:</span> <span class="n">submissions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">agent</span> <span class="k">if</span> <span class="n">submissions</span> <span class="k">else</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>                <span class="s2">&quot;reasoning&quot;</span><span class="p">:</span> <span class="s2">&quot;Could not parse LLM response&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>                <span class="s2">&quot;scores&quot;</span><span class="p">:</span> <span class="p">{}</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>                <span class="s2">"winner"</span><span class="p">:</span> <span class="n">submissions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">agent</span> <span class="k">if</span> <span class="n">submissions</span> <span class="k">else</span> <span class="s2">"unknown"</span><span class="p">,</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>                <span class="s2">"reasoning"</span><span class="p">:</span> <span class="s2">"Could not parse LLM response"</span><span class="p">,</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>                <span class="s2">"scores"</span><span class="p">:</span> <span class="p">{}</span>
 <a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>            <span class="p">}</span>
 <a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>
 <a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>        <span class="k">return</span> <span class="n">Verdict</span><span class="p">(</span>
-<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>            <span class="n">winner</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;winner&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;reasoning&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>            <span class="n">scores</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;scores&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>            <span class="n">winner</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s2">"winner"</span><span class="p">],</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s2">"reasoning"</span><span class="p">],</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>            <span class="n">scores</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"scores"</span><span class="p">,</span> <span class="p">{}),</span>
 <a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>            <span class="n">confidence</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>  <span class="c1"># LLM judges have inherent uncertainty</span>
 <a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>        <span class="p">)</span>
 </code></pre></div>
@@ -3017,14 +3017,14 @@ not just compare them against each other.</p>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">MetricsJudge</span><span class="p">:</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Judge based on objective metrics.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="sd">"""Judge based on objective metrics."""</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Score submissions using metrics.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="sd">"""Score submissions using metrics."""</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="k">for</span> <span class="n">submission</span> <span class="ow">in</span> <span class="n">submissions</span><span class="p">:</span>
@@ -3047,18 +3047,18 @@ not just compare them against each other.</p>
 <a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>            <span class="n">scores</span><span class="p">[</span><span class="n">submission</span><span class="o">.</span><span class="n">agent</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
 <a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>        <span class="c1"># Determine winner</span>
-<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>        <span class="n">winner</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores</span> <span class="k">else</span> <span class="s2">&quot;unknown&quot;</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>        <span class="n">winner</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores</span> <span class="k">else</span> <span class="s2">"unknown"</span>
 <a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>        <span class="n">max_score</span> <span class="o">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">winner</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores</span> <span class="k">else</span> <span class="mi">0</span>
 <a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
 <a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>        <span class="k">return</span> <span class="n">Verdict</span><span class="p">(</span>
 <a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>            <span class="n">winner</span><span class="o">=</span><span class="n">winner</span><span class="p">,</span>
-<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Highest composite score: </span><span class="si">{</span><span class="n">max_score</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Highest composite score: </span><span class="si">{</span><span class="n">max_score</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
 <a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>            <span class="n">scores</span><span class="o">=</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
 <a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>            <span class="n">confidence</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># Metrics are deterministic</span>
 <a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>        <span class="p">)</span>
 <a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>
 <a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_is_correct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if result is correct (domain-specific).&quot;&quot;&quot;</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">        </span><span class="sd">"""Check if result is correct (domain-specific)."""</span>
 <a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>        <span class="c1"># Implement your correctness check</span>
 <a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>        <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
@@ -3071,7 +3071,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">ConsensusJudge</span><span class="p">:</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Multiple judges vote on winner.&quot;&quot;&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="sd">"""Multiple judges vote on winner."""</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">judges</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Judge</span><span class="p">]):</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">judges</span> <span class="o">=</span> <span class="n">judges</span>
@@ -3081,7 +3081,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Collect verdicts from all judges.&quot;&quot;&quot;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="sd">"""Collect verdicts from all judges."""</span>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="n">verdicts</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        <span class="k">for</span> <span class="n">judge</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">judges</span><span class="p">:</span>
@@ -3108,7 +3108,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
 <a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>        <span class="k">return</span> <span class="n">Verdict</span><span class="p">(</span>
 <a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>            <span class="n">winner</span><span class="o">=</span><span class="n">winner</span><span class="p">,</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">verdicts</span><span class="p">)</span><span class="si">}</span><span class="s2"> judges voted; </span><span class="si">{</span><span class="n">winner</span><span class="si">}</span><span class="s2"> wins (</span><span class="si">{</span><span class="n">confidence</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> consensus)&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">verdicts</span><span class="p">)</span><span class="si">}</span><span class="s2"> judges voted; </span><span class="si">{</span><span class="n">winner</span><span class="si">}</span><span class="s2"> wins (</span><span class="si">{</span><span class="n">confidence</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> consensus)"</span><span class="p">,</span>
 <a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>            <span class="n">scores</span><span class="o">=</span><span class="n">avg_scores</span><span class="p">,</span>
 <a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>            <span class="n">confidence</span><span class="o">=</span><span class="n">confidence</span><span class="p">,</span>
 <a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>        <span class="p">)</span>
@@ -3122,8 +3122,8 @@ not just compare them against each other.</p>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="k">if</span> <span class="n">performance_is_equal</span><span class="p">:</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            <span class="k">return</span> <span class="n">Verdict</span><span class="p">(</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                <span class="n">winner</span><span class="o">=</span><span class="s2">&quot;tie&quot;</span><span class="p">,</span>  <span class="c1"># Signal a tie</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                <span class="n">reasoning</span><span class="o">=</span><span class="s2">&quot;Both submissions equal in all metrics&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                <span class="n">winner</span><span class="o">=</span><span class="s2">"tie"</span><span class="p">,</span>  <span class="c1"># Signal a tie</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                <span class="n">reasoning</span><span class="o">=</span><span class="s2">"Both submissions equal in all metrics"</span><span class="p">,</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                <span class="n">scores</span><span class="o">=</span><span class="p">{</span><span class="n">s</span><span class="o">.</span><span class="n">agent</span><span class="p">:</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">submissions</span><span class="p">},</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                <span class="n">confidence</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            <span class="p">)</span>
@@ -3139,7 +3139,7 @@ not just compare them against each other.</p>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">verdict</span><span class="o">.</span><span class="n">reasoning</span><span class="p">)</span>    <span class="c1"># Why they won</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Metrics</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">verdict</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span>       <span class="c1"># {&quot;Agent1&quot;: 0.9, &quot;Agent2&quot;: 0.7}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">verdict</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span>       <span class="c1"># {"Agent1": 0.9, "Agent2": 0.7}</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">verdict</span><span class="o">.</span><span class="n">confidence</span><span class="p">)</span>   <span class="c1"># 0.0 to 1.0</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># Metadata</span>
@@ -3153,11 +3153,11 @@ not just compare them against each other.</p>
 <h2 id="submission-properties">Submission Properties<a class="headerlink" href="#submission-properties" title="Permanent link">&para;</a></h2>
 <p>What judges receive:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">submission</span> <span class="o">=</span> <span class="n">Submission</span><span class="p">(</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">agent</span><span class="o">=</span><span class="s2">&quot;DataAgent&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">agent</span><span class="o">=</span><span class="s2">"DataAgent"</span><span class="p">,</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">result</span><span class="o">=</span><span class="n">TaskResult</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="o">...</span><span class="p">),</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">latency_ms</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>           <span class="c1"># How long it took</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">cost</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>                <span class="c1"># API cost</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>  <span class="c1"># Custom data</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"accuracy"</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">}</span>  <span class="c1"># Custom data</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">)</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">agent</span><span class="p">)</span>       <span class="c1"># Agent name</span>
@@ -3174,18 +3174,18 @@ not just compare them against each other.</p>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CodeQualityJudge</span><span class="p">:</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Judge code submissions on quality.&quot;&quot;&quot;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="sd">"""Judge code submissions on quality."""</span>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="bp">self</span><span class="p">,</span>
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="n">submissions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Submission</span><span class="p">],</span>
 <a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Verdict</span><span class="p">:</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate code quality.&quot;&quot;&quot;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="sd">"""Evaluate code quality."""</span>
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>        <span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="k">for</span> <span class="n">submission</span> <span class="ow">in</span> <span class="n">submissions</span><span class="p">:</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>            <span class="n">code</span> <span class="o">=</span> <span class="n">submission</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>            <span class="n">code</span> <span class="o">=</span> <span class="n">submission</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"code"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>            <span class="n">quality</span> <span class="o">=</span> <span class="mf">0.0</span>
 <a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
@@ -3211,11 +3211,11 @@ not just compare them against each other.</p>
 <a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>
 <a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>            <span class="n">scores</span><span class="p">[</span><span class="n">submission</span><span class="o">.</span><span class="n">agent</span><span class="p">]</span> <span class="o">=</span> <span class="n">quality</span>
 <a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>
-<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>        <span class="n">winner</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores</span> <span class="k">else</span> <span class="s2">&quot;unknown&quot;</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>        <span class="n">winner</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">)</span> <span class="k">if</span> <span class="n">scores</span> <span class="k">else</span> <span class="s2">"unknown"</span>
 <a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>
 <a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>        <span class="k">return</span> <span class="n">Verdict</span><span class="p">(</span>
 <a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>            <span class="n">winner</span><span class="o">=</span><span class="n">winner</span><span class="p">,</span>
-<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">winner</span><span class="si">}</span><span class="s2"> has best code quality (</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">winner</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">/100)&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>            <span class="n">reasoning</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">winner</span><span class="si">}</span><span class="s2"> has best code quality (</span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">winner</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">/100)"</span><span class="p">,</span>
 <a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>            <span class="n">scores</span><span class="o">=</span><span class="n">scores</span><span class="p">,</span>
 <a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>            <span class="n">confidence</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
 <a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>        <span class="p">)</span>
@@ -3225,14 +3225,14 @@ not just compare them against each other.</p>
 <a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>        <span class="k">return</span> <span class="kc">True</span>
 <a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>
 <a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_has_tests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>        <span class="k">return</span> <span class="s2">&quot;def test_&quot;</span> <span class="ow">in</span> <span class="n">code</span>
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>        <span class="k">return</span> <span class="s2">"def test_"</span> <span class="ow">in</span> <span class="n">code</span>
 <a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>
 <a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_is_performant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>        <span class="c1"># Check time complexity, etc.</span>
 <a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>        <span class="k">return</span> <span class="kc">True</span>
 <a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>
 <a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_has_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>        <span class="k">return</span> <span class="s1">&#39;&quot;&quot;&quot;&#39;</span> <span class="ow">in</span> <span class="n">code</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>        <span class="k">return</span> <span class="s1">'"""'</span> <span class="ow">in</span> <span class="n">code</span>
 <a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>
 <a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_passes_tests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>        <span class="c1"># Run tests</span>
@@ -3385,7 +3385,7 @@ not just compare them against each other.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
